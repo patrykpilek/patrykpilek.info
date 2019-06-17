@@ -6,3 +6,23 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+#authors {
+  img {
+    margin-top: -50px;
+  }
+
+  .card:hover {
+    background: #C0C0C0;
+    color: #fff;
+
+    .text-muted {
+      color: #fff !important;
+    }
+  }
+}
+
+.image-avatar {
+  height: 50px;
+  width: 50px;
+}

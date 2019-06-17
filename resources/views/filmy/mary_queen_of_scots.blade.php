@@ -16,9 +16,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
-                        <video poster="{{ asset('img/mary_queen_of_scots_poster_horizontal.jpg') }}" controls
+                        <video poster="{{ url('storage/movie_posters/mary_queen_of_scots_poster_horizontal.jpg') }}" controls
                                controlsList="nodownload" preload="none">
-                            <source src="{{ asset('movies/mary_queen_of_scots/mary_queen_of_scots.mp4') }}"
+                            <source src="{{ url('storage/movies/mary_queen_of_scots/mary_queen_of_scots.mp4') }}"
                                     type="video/mp4">
                             Your browser does not support the video tag.
                         </video>

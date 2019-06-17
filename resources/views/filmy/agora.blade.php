@@ -14,8 +14,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
-						<video poster="{{ asset('img/agora_poster_horizontal.jpg') }}" controls controlsList="nodownload" preload="none">
-							<source src="{{ asset('movies/agora/agora.mp4') }}" type="video/mp4">
+						<video poster="{{ url('storage/movie_posters/agora_poster_horizontal.jpg') }}" controls controlsList="nodownload" preload="none">
+							<source src="{{ url('storage/movies/agora/agora.mp4') }}" type="video/mp4">
 								Your browser does not support the video tag.
 						</video>
 						<p>

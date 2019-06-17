@@ -7,16 +7,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/komunikator', 'KomunikatorController@komunikator')->name('komunikator');
-    Route::get('/followers', 'KomunikatorController@followers')->name('followers');
-    Route::get('/following', 'KomunikatorController@following')->name('following');
+    Route::get('/wiadomosci', 'KomunikatorController@index')->name('wiadomosci');
     Route::get('/posts', 'PostController@index');
     Route::post('/posts', 'PostController@create');
 
-    Route::get('/users', 'UserController@index')->name('users');
     Route::get('/users/{user}', 'UserController@view')->name('users.view');
     Route::get('/users/{user}/follow', 'UserController@follow')->name('users.follow');
     Route::get('/users/{user}/unfollow', 'UserController@unfollow')->name('users.unfollow');
+
+    Route::get('profile', 'UserController@profile')->name('profile');
+    Route::post('profile', 'UserController@update_avatar')->name('update.avatar');
 });
 
 Route::get('/filmy', 'FilmyController@index')->name('filmy');

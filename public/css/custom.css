@@ -44,3 +44,14 @@ footer p {
         padding-bottom: 6rem;
     }
 }
+
+@media (max-width: 576px) {
+    .logo-header-logo {
+        font-size: 0.90rem;
+    }
+}
+
+.wszyscy_urzytkownicy {
+    width: 64px;
+    height: 64px;
+}

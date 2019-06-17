@@ -41,8 +41,7 @@ class App extends Component {
         });
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
+    handleSubmit() {
         axios
             .post('/posts', {
                 body: this.state.body
@@ -68,19 +67,23 @@ class App extends Component {
         });
     }
 
+    handleKeyDown(e, cb) {
+        if (e.key === 'Enter' && e.shiftKey === false) {
+            e.preventDefault();
+            cb();
+        }
+    };
+
     renderPosts() {
         return this.state.posts.map(post => (
             <div key={post.id} className="media">
-                <div className="media-left">
-                    <img src={post.user.avatar} className="media-object mr-2" />
-                </div>
+                <img src={window.location.origin + '/storage/avatars/' + post.user.avatar} className="align-self-center mr-3 image-avatar img-fluid rounded-circle mb-3" />
                 <div className="media-body">
-                    <div className="user">
+                    <h6 className="mt-0">
                         <a href={`/users/${post.user.username}`}>
                             <b>{post.user.username}</b>
-                        </a>{' '}
-                        - {post.humanCreatedAt}
-                    </div>
+                        </a>{' '}- <small>{post.humanCreatedAt}</small>
+                    </h6>
                     <p>{post.body}</p>
                 </div>
             </div>
@@ -88,32 +91,39 @@ class App extends Component {
     }
 
     render() {
+
         return (
-            <div>
-                {this.state.posts.length > 0 && (
-                    <div>
-                        <div className="card">
-                            <div className="card-body">
-                                <form onSubmit={this.handleSubmit}>
-                                    <div className="form-group">
+            <div className="justify-content-center">
+                <div className="card mb-2">
+                    <div className="card-body">
+                        <form onSubmit={this.handleSubmit}
+                              onKeyDown={(e) => { this.handleKeyDown(e, this.handleSubmit); }} >
+                            <div className="form-group">
                                         <textarea
                                             onChange={this.handleChange}
                                             value={this.state.body}
                                             className="form-control"
-                                            rows="5"
-                                            maxLength="140"
-                                            placeholder="Napisz swoja wiadomosc..."
+                                            rows="3"
+                                            maxLength="290"
+                                            placeholder="Napisz wiadomosc..."
                                             required
                                         />
+                            </div>
+                            {/*<input type="submit" value="Post" className="form-control" />*/}
+                        </form>
+                    </div>
+                </div>
+
+                {this.state.posts.length > 0 && (
+                    <div className="card">
+                        <div className="card-body">
+                            {!this.state.loading ? this.renderPosts() :
+                                <div className="d-flex justify-content-center">
+                                    <div className="spinner-border" role="status">
+                                        <span className="sr-only">Loading...</span>
                                     </div>
-                                    <input type="submit" value="Wyslij wiadomosc" className="form-control" />
-                                </form>
-                            </div>
-                        </div>
-                        <div className="card mt-2">
-                            <div className="card-body">
-                                {!this.state.loading ? this.renderPosts() : 'Loading...'}
-                            </div>
+                                </div>
+                            }
                         </div>
                     </div>
                 )}

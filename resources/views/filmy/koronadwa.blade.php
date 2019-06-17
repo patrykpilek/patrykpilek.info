@@ -66,9 +66,9 @@
                             <div class="tab-pane fade show active" id="list-odc1" role="tabpanel"
                                  aria-labelledby="list-odc1-list">
                                 <p class="text-center">Odcinek 1. Nieszczęśliwy wypadek</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o1.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o1.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -80,9 +80,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc2" role="tabpanel" aria-labelledby="list-odc2-list">
                                 <p class="text-center">Odcinek 2. W męskim gronie</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o2.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o2.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -94,9 +94,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc3" role="tabpanel" aria-labelledby="list-odc3-list">
                                 <p class="text-center">Odcinek 3. Lizbona</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o3.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o3.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -107,9 +107,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc4" role="tabpanel" aria-labelledby="list-odc4-list">
                                 <p class="text-center">Odcinek 4. Beryl</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o4.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o4.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -120,9 +120,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc5" role="tabpanel" aria-labelledby="list-odc5-list">
                                 <p class="text-center">Odcinek 5. Marionetki</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o5.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o5.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -134,9 +134,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc6" role="tabpanel" aria-labelledby="list-odc6-list">
                                 <p class="text-center">Odcinek 6. Przeszlosc</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o6.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o6.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -148,9 +148,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc7" role="tabpanel" aria-labelledby="list-odc7-list">
                                 <p class="text-center">Odcinek 7. Matrimonim</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o7.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o7.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -161,9 +161,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc8" role="tabpanel" aria-labelledby="list-odc8-list">
                                 <p class="text-center">Odcinek 8. Szanowna Pani Kennedy</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o8.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o8.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -174,9 +174,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc9" role="tabpanel" aria-labelledby="list-odc9-list">
                                 <p class="text-center">Odcinek 9. Rodzinna Sprawa</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o9.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o9.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -189,9 +189,9 @@
                             <div class="tab-pane fade" id="list-odc10" role="tabpanel"
                                  aria-labelledby="list-odc10-list">
                                 <p class="text-center">Odcinek 10. Tajemniczy mezczyzna</p>
-                                <video poster="{{ asset('img/the_crown_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/crown/Korona_s2o10.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s2o10.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>

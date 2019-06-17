@@ -14,8 +14,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
-						<video poster="{{ asset('img/brexit_poster_horizontal.jpg') }}" controls controlsList="nodownload" preload="none">
-							<source src="{{ asset('movies/brexit/brexit.mp4') }}" type="video/mp4">
+						<video poster="{{ url('storage/movie_posters/brexit_poster_horizontal.jpg') }}" controls controlsList="nodownload" preload="none">
+							<source src="{{ url('storage/movies/brexit/brexit.mp4') }}" type="video/mp4">
 								Your browser does not support the video tag.
 						</video>
 						<p>

@@ -18,10 +18,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password',
+        'username', 'email', 'password', 'avatar',
     ];
-
-    protected $appends = [ 'avatar' ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -54,7 +52,7 @@ class User extends Authenticatable
      */
     public function following()
     {
-        return $this->belongsToMany('App\User', 'follows', 'user_id', 'follower_id');
+        return $this->belongsToMany('App\User', 'follows', 'user_id', 'follower_id')->withTimestamps();
     }
 
     /**
@@ -62,23 +60,17 @@ class User extends Authenticatable
      */
     public function followers()
     {
-        return $this->belongsToMany('App\User', 'follows', 'follower_id', 'user_id');
+        return $this->belongsToMany('App\User', 'follows', 'follower_id', 'user_id')->withTimestamps();
     }
 
     /**
+     * Get the user url avatar.
+     *
      * @return string
      */
-    public function getAvatar()
+    public function getImageAttribute()
     {
-        return 'https://gravatar.com/avatar/' . md5($this->email) . '/?s=45&d=mm';
-    }
-
-    /**
-     * @return string
-     */
-    public function getAvatarAttribute()
-    {
-        return $this->getAvatar();
+        return url('storage/avatars/' . $this->avatar );
     }
 
     /**

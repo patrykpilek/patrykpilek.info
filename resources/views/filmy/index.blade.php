@@ -8,7 +8,7 @@
             <div class="col-md-2 pb-2">
                 <div class="card bg-dark text-white">
                     <a href="{{ route('koronajeden') }}" class="text-decoration-none">
-                        <img src="{{ asset('img/crown_season_one_poster_vertical.jpg') }}" class="card-img"
+                        <img src="{{ url('storage/movie_posters/crown_season_one_poster_vertical.jpg') }}" class="card-img"
                              alt="The Crown Season One">
                         <div class="card-footer bg-dark text-white">
                             <small>Korona - sezon 1</small>
@@ -19,7 +19,7 @@
             <div class="col-md-2 pb-2">
                 <div class="card bg-dark text-white">
                     <a href="{{ route('koronadwa') }}" class="text-decoration-none">
-                        <img src="{{ asset('img/crown_season_two_poster_vertical.jpg') }}" class="card-img"
+                        <img src="{{ url('storage/movie_posters/crown_season_two_poster_vertical.jpg') }}" class="card-img"
                              alt="The Crown Season Two">
                         <div class="card-footer bg-dark text-white">
                             <small>Korona - sezon 2</small>
@@ -30,7 +30,7 @@
             <div class="col-md-2 pb-2">
                 <div class="card">
                     <a href="{{ route('people_vs_oj_simpson') }}" class="text-decoration-none">
-                        <img src="{{ asset('img/people_vs_oj_simpson_vertical.jpg') }}" class="card-img"
+                        <img src="{{ url('storage/movie_posters/people_vs_oj_simpson_vertical.jpg') }}" class="card-img"
                              alt="One Of Us">
                         <div class="card-footer bg-dark text-white">
                             <small>O.J Simpson</small>
@@ -41,7 +41,7 @@
             <div class="col-md-2 pb-2">
                 <div class="card">
                     <a href="{{ route('chernobyl') }}" class="text-decoration-none">
-                        <img src="{{ asset('img/chernobyl_poster_vertical.jpg') }}" class="card-img" alt="Chernobyl">
+                        <img src="{{ url('storage/movie_posters/chernobyl_poster_vertical.jpg') }}" class="card-img" alt="Chernobyl">
                         <div class="card-footer bg-dark text-white">
                             <small>Chernobyl</small>
                         </div>
@@ -51,7 +51,7 @@
             <div class="col-md-2 pb-2">
                 <div class="card">
                     <a href="{{ route('mary_queen_of_scots') }}" class="text-decoration-none">
-                        <img src="{{ asset('img/mary_queen_of_scots_poster_vertical.jpg') }}" class="card-img"
+                        <img src="{{ url('storage/movie_posters/mary_queen_of_scots_poster_vertical.jpg') }}" class="card-img"
                              alt="Mary Queen of Scots">
                         <div class="card-footer bg-dark text-white">
                             <small>Queen of Scots</small>
@@ -62,7 +62,7 @@
             <div class="col-md-2 pb-2">
                 <div class="card">
                     <a href="{{ route('kursk') }}" class="text-decoration-none">
-                        <img src="{{ asset('img/kursk_poster_vertical.jpg') }}" class="card-img" alt="Kursk">
+                        <img src="{{ url('storage/movie_posters/kursk_poster_vertical.jpg') }}" class="card-img" alt="Kursk">
                         <div class="card-footer bg-dark text-white">
                             <small>Kursk</small>
                         </div>
@@ -72,7 +72,7 @@
             <div class="col-md-2 pb-2">
                 <div class="card">
                     <a href="{{ route('brexit') }}" class="text-decoration-none">
-                        <img src="{{ asset('img/brexit_poster_vertical.jpg') }}" class="card-img" alt="Brexit">
+                        <img src="{{ url('storage/movie_posters/brexit_poster_vertical.jpg') }}" class="card-img" alt="Brexit">
                         <div class="card-footer bg-dark text-white">
                             <small>Brexit</small>
                         </div>
@@ -82,7 +82,7 @@
             <div class="col-md-2 pb-2">
                 <div class="card">
                     <a href="{{ route('agora') }}" class="text-decoration-none">
-                        <img src="{{ asset('img/agora_poster_vertical.jpg') }}" class="card-img" alt="Agora">
+                        <img src="{{ url('storage/movie_posters/agora_poster_vertical.jpg') }}" class="card-img" alt="Agora">
                         <div class="card-footer bg-dark text-white">
                             <small>Agora</small>
                         </div>

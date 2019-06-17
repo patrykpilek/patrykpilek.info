@@ -44,9 +44,9 @@
                             <div class="tab-pane fade show active" id="list-odc1" role="tabpanel"
                                  aria-labelledby="list-odc1-list">
                                 <p class="text-center">Odcinek 1. "1:23:45"</p>
-                                <video poster="{{ asset('img/chernobyl_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/chernobyl_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/chernobyl/chernobyl_odc1.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/chernobyl/chernobyl_odc1.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -57,9 +57,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc2" role="tabpanel" aria-labelledby="list-odc2-list">
                                 <p class="text-center">Odcinek 2. Uprasza się o zachowanie spokoju</p>
-                                <video poster="{{ asset('img/chernobyl_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/chernobyl_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/chernobyl/chernobyl_odc2.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/chernobyl/chernobyl_odc2.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -72,9 +72,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc3" role="tabpanel" aria-labelledby="list-odc3-list">
                                 <p class="text-center">Odcinek 3. Otwórz się szeroko, ziemio</p>
-                                <video poster="{{ asset('img/chernobyl_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/chernobyl_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/chernobyl/chernobyl_odc3.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/chernobyl/chernobyl_odc3.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -86,9 +86,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc4" role="tabpanel" aria-labelledby="list-odc4-list">
                                 <p class="text-center">Odcinek 4. Szczęście całej ludzkości</p>
-                                <video poster="{{ asset('img/chernobyl_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/chernobyl_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/chernobyl/chernobyl_odc4.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/chernobyl/chernobyl_odc4.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -100,9 +100,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc5" role="tabpanel" aria-labelledby="list-odc5-list">
                                 <p class="text-center">Odcinek 5. </p>
-                                <video poster="{{ asset('img/chernobyl_poster_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/chernobyl_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/chernobyl/chernobyl_odc5.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/chernobyl/chernobyl_odc5.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>

@@ -17,7 +17,7 @@
         <link href="coming_soon/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
         <!-- Custom styles for this template -->
-        <link href="coming_soon/css/coming-soon.min.css" rel="stylesheet">
+        <link href="coming_soon/css/coming-soon.css" rel="stylesheet">
 
     </head>
 
@@ -25,7 +25,7 @@
 
         <div class="overlay"></div>
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="coming_soon/mp4/bg.mp4" type="video/mp4">
+            <source src="coming_soon/mp4/fado.mp4" type="video/mp4">
         </video>
 
         <div class="masthead">
@@ -36,7 +36,7 @@
                         <div class="masthead-content text-white py-5 py-md-0">
                             <h1 class="mb-3">Coming Soon!</h1>
                             <p class="mb-5">I am working hard to finish the development of this site. Target launch date is
-                                <strong>January 2019</strong>! Sign up for updates using the form below!</p>
+                                <strong>January 2020</strong>! Sign up for updates using the form below!</p>
                             <div class="input-group input-group-newsletter">
                                 <input type="email" class="form-control" placeholder="Enter email..." aria-label="Enter email..." aria-describedby="basic-addon">
                                 <div class="input-group-append">
@@ -52,13 +52,8 @@
         <div class="social-icons">
             <ul class="list-unstyled text-center mb-0">
                 <li class="list-unstyled-item">
-                    <a href="#">
+                    <a href="https://twitter.com/PatrykPilek">
                         <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-unstyled-item">
-                    <a href="#">
-                        <i class="fab fa-facebook-f"></i>
                     </a>
                 </li>
                 <li class="list-unstyled-item">
@@ -74,7 +69,7 @@
         <script src="coming_soon/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Custom scripts for this template -->
-        <script src="coming_soon/js/coming-soon.min.js"></script>
+        <script src="coming_soon/js/coming-soon.js"></script>
 
     </body>
 

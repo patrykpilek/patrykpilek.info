@@ -64,9 +64,9 @@
                             <div class="tab-pane fade show active" id="list-odc1" role="tabpanel"
                                  aria-labelledby="list-odc1-list">
                                 <p class="text-center">Odcinek 1. Z popiołów tragedii</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o1.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o1.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -78,9 +78,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc2" role="tabpanel" aria-labelledby="list-odc2-list">
                                 <p class="text-center">Odcinek 2. Ratuj się</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o2.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o2.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -94,9 +94,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc3" role="tabpanel" aria-labelledby="list-odc3-list">
                                 <p class="text-center">Odcinek 3. Wymarzona ekipa</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o3.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o3.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -113,9 +113,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc4" role="tabpanel" aria-labelledby="list-odc4-list">
                                 <p class="text-center">Odcinek 4. Niewinny na 100%</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o4.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o4.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -131,9 +131,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc5" role="tabpanel" aria-labelledby="list-odc5-list">
                                 <p class="text-center">Odcinek 5. Dyskryminacja rasowa</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o5.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o5.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -147,9 +147,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc6" role="tabpanel" aria-labelledby="list-odc6-list">
                                 <p class="text-center">Odcinek 6. Marcia, Marcia, Marcia</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o6.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o6.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -162,9 +162,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc7" role="tabpanel" aria-labelledby="list-odc7-list">
                                 <p class="text-center">Odcinek 7. Teorie spiskowe</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o7.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o7.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -177,9 +177,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc8" role="tabpanel" aria-labelledby="list-odc8-list">
                                 <p class="text-center">Odcinek 8. Ława przysięgłych w więzieniu</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o8.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o8.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -194,9 +194,9 @@
                             </div>
                             <div class="tab-pane fade" id="list-odc9" role="tabpanel" aria-labelledby="list-odc9-list">
                                 <p class="text-center">Odcinek 9. Manna z nieba</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o9.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o9.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -211,9 +211,9 @@
                             <div class="tab-pane fade" id="list-odc10" role="tabpanel"
                                  aria-labelledby="list-odc10-list">
                                 <p class="text-center">Odcinek 10. Werdykt</p>
-                                <video poster="{{ asset('img/people_vs_oj_simpson_horizontal.jpg') }}" controls
+                                <video poster="{{ url('storage/movie_posters/people_vs_oj_simpson_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ asset('movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o10.mp4') }}"
+                                    <source src="{{ url('storage/movies/people_vs_oj_simpson/people_vs_oj_simpson_s1o10.mp4') }}"
                                             type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
