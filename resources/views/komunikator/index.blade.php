@@ -37,7 +37,7 @@
             <div class="col-md-8">
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="list-wiadomosci" role="tabpanel" aria-labelledby="list-wiadomosci-list">
-                        <div id="root"></div>
+                        <div id="react-posts"></div>
                     </div>
                     <div class="tab-pane fade" id="list-podazajacy" role="tabpanel" aria-labelledby="list-podazajacy-list">
                         <section id="authors" class="my-5 text-center">

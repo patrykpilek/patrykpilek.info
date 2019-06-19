@@ -8,8 +8,8 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/wiadomosci', 'KomunikatorController@index')->name('wiadomosci');
-    Route::get('/posts', 'PostController@index');
-    Route::post('/posts', 'PostController@create');
+    Route::post('/posts', 'PostController@index');
+    Route::post('/createPost', 'PostController@create');
 
     Route::get('/users/{user}', 'UserController@view')->name('users.view');
     Route::get('/users/{user}/follow', 'UserController@follow')->name('users.follow');
