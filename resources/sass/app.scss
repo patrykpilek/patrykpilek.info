@@ -72,15 +72,27 @@ footer p {
   border-color: #C0C0C0;
 }
 
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
+.user-avatar {
+  width: 350px;
+  height: 350px;
 }
 
 @media (max-width: 576px) {
   .logo-header-logo {
-    font-size: 0.90rem;
+    font-size: 0.85rem;
+  }
+  .user-avatar {
+    width: 150px  !important;
+    height: 150px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .logo-header-logo {
+    font-size: 1.25rem;
+  }
+  .user-avatar {
+    width: 250px  !important;
+    height: 250px !important;
   }
 }

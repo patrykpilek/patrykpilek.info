@@ -3,31 +3,125 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Http\File;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-
     /**
-     * @return Factory|View
+     * Display a listing of the resource.
+     *
+     * @return Response
      */
-    public function index() {
-        $users = User::all();
-        return view('users.index', compact('users'));
+    public function index()
+    {
+        $user = Auth::user();
+        return view('users.index', compact('user'));
     }
 
     /**
-     * @param User $user
-     * @return Factory|View
+     * Show the form for creating a new resource.
+     *
+     * @return void
      */
-    public function view(User $user) {
-        return view('users.view', compact('user'));
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param User $user
+     * @return Response
+     */
+    public function show(User $user)
+    {
+        return view('users.show', compact('user'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return void
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param User $user
+     * @return Response
+     */
+    public function update(Request $request, User $user)
+    {
+        $data = $request->all();
+
+        if($request->input('password')) {
+            $data['password'] = $request->input('password');
+        } else {
+            $userpassowrd = $user->password;
+            $data['password'] = $userpassowrd;
+            $data['password_confirmation'] = $userpassowrd;
+        }
+
+        $validator = Validator::make($data, [
+            'username' => ['required', 'string', 'max:255', 'unique:users,username,' . $user->id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('users.index')->withErrors($validator)->withInput();
+        }
+
+        if ($request->hasFile('avatar')) {
+            $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+            $request->avatar->storeAs('public/avatars', $avatarName);
+            $data['avatar'] = $avatarName;
+        }
+
+        $data['password'] = Hash::make(trim($request->password));
+
+        $user->update($data);
+
+        return back()->with('success','Twój profil został zaktualizowany pomyślnie.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param User $user
+     * @return void
+     */
+    public function destroy(User $user)
+    {
+        Auth::logout();
+
+        if ($user->forceDelete()) {
+            return redirect()->route('filmy')->with('success', 'Twoje konto zostało usunięte!');
+        }
     }
 
     /**
@@ -52,37 +146,5 @@ class UserController extends Controller
             $request->user()->following()->detach($user->id);
         }
         return redirect()->back();
-    }
-
-    /**
-     * @return Factory|View
-     */
-    public function profile()
-    {
-        $user = Auth::user();
-        return view('users.profile', compact('user'));
-    }
-
-    /**
-     * @param Request $request
-     * @return RedirectResponse
-     */
-    public function update_avatar(Request $request){
-
-        $request->validate([
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        $user = Auth::user();
-
-        $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
-
-        $request->avatar->storeAs('public/avatars', $avatarName);
-
-        $user->avatar = $avatarName;
-        $user->save();
-
-        return back()->with('success','Udało Ci się przesłać obraz.');
-
     }
 }

@@ -15,7 +15,7 @@
         <div class="py-5 bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <p class="text-center">Odcinki</p>
                         <div class="list-group" id="list-tab" role="tablist">
                             <a class="list-group-item list-group-item-action active" id="list-odc1-list"

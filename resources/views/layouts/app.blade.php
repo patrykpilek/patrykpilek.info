@@ -26,6 +26,9 @@
                         @if (Route::has('register'))
                             <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">{{ __('Rejestracja') }}</a>
                         @endif
+
+                    @else
+
                     @endguest
                 </div>
                 <div class="col-4 text-center">
@@ -39,9 +42,9 @@
                             <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ Auth::user()->username }} <span class="caret"></span>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{{ route('profile') }}">
-                                    Zmien Zdjecie
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{{ route('users.index') }}">
+                                    Twoj Profil
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();

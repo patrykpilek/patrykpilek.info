@@ -15,7 +15,7 @@
         <div class="py-5 bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <p class="text-center">Odcinki</p>
                         <div class="list-group" id="list-tab" role="tablist">
                             <a class="list-group-item list-group-item-action active" id="list-odc1-list"
@@ -102,7 +102,7 @@
                                 <p class="text-center">Odcinek 3. Książę Windsoru</p>
                                 <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ url('storage/movies/movie_posters/crown/Korona_s1o3.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s1o3.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -123,7 +123,7 @@
                                 <p class="text-center">Odcinek 4. Siła wyższa</p>
                                 <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ url('storage/movies/movie_posters/crown/Korona_s1o4.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s1o4.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>
@@ -141,7 +141,7 @@
                                 <p class="text-center">Odcinek 5. Magia korony</p>
                                 <video poster="{{ url('storage/movie_posters/the_crown_poster_horizontal.jpg') }}" controls
                                        controlsList="nodownload" preload="none">
-                                    <source src="{{ url('storage/movies/movie_posters/crown/Korona_s1o5.mp4') }}" type="video/mp4">
+                                    <source src="{{ url('storage/movies/crown/Korona_s1o5.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <p>

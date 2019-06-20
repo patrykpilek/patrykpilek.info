@@ -58,18 +58,17 @@
 
                             <div class="row">
                                 @foreach($following as $user)
-                                    <div class="col-lg-3 col-md-6">
+                                    <div class="col-6 col-sm-4 col-md-4 mb-4">
                                         <div class="card">
-                                            <div class="card-body">
-                                                <a href="{{ route('users.view', $user) }}" class="btn">
+                                            <a href="{{ route('users.show', $user) }}" class="btn">
+                                                <div class="card-body">
                                                     <img src="{{ $user->image }}" alt="" class="img-fluid rounded-circle wszyscy_urzytkownicy mb-3">
                                                     <h6 class="text-muted">{{ $user->username }}</h6>
-                                                </a>
-                                            </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 @endforeach
-
                             </div>
                         </section>
                     </div>
@@ -91,14 +90,14 @@
                             </div>
                             <div class="row">
                                 @foreach($followers as $user)
-                                    <div class="col-lg-3 col-md-6">
+                                    <div class="col-6 col-sm-4 col-md-4 mb-4">
                                         <div class="card">
-                                            <div class="card-body">
-                                                <a href="{{ route('users.view', $user) }}" class="btn">
+                                            <a href="{{ route('users.show', $user) }}" class="btn">
+                                                <div class="card-body">
                                                     <img src="{{ $user->image }}" alt="" class="img-fluid rounded-circle wszyscy_urzytkownicy mb-3">
                                                     <h6 class="text-muted">{{ $user->username }}</h6>
-                                                </a>
-                                            </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 @endforeach
@@ -115,9 +114,9 @@
                                 <div class="row">
                                     @foreach($users as $user)
                                         @if(Auth::user()->isNotTheUser($user))
-                                            <div class="col-md-3">
+                                            <div class="col-4 col-sm-4 col-md-3 mb-4">
                                                 <img src="{{ $user->image }}" alt="{{ $user->username }}" class="img-fluid rounded-circle mb-2 wszyscy_urzytkownicy">
-                                                <h4>{{ $user->username }}</h4>
+                                                <h6>{{ $user->username }}</h6>
                                                 @if(Auth::user()->isFollowing($user))
                                                     <a href="{{ route('users.unfollow', $user) }}" class="btn btn-primary btn-sm">Nie obserwuj</a>
                                                 @else
