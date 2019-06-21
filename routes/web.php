@@ -8,7 +8,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/wiadomosci', 'KomunikatorController@index')->name('wiadomosci');
     Route::post('/posts', 'PostController@index');
     Route::post('/createPost', 'PostController@create');
-
     Route::resource('/users', 'UserController')->except(['create', 'store', 'edit']);
     Route::get('/users/{user}/follow', 'UserController@follow')->name('users.follow');
     Route::get('/users/{user}/unfollow', 'UserController@unfollow')->name('users.unfollow');

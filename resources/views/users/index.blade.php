@@ -14,20 +14,20 @@
                         <div class="card-body text-center">
                             <div class="fileinput fileinput-new {{ $errors->has('image') ? ' is-invalid' : '' }}" data-provides="fileinput">
                                 <div class="fileinput-new img-thumbnail user-avatar">
-                                    <img src="{{ $user->image }}" alt="{{ $user->username }}">
+                                    <img class="user-avatar" src="{{ $user->image }}" alt="{{ $user->username }}">
                                 </div>
                                 <div class="fileinput-preview fileinput-exists img-thumbnail user-avatar"></div>
                                 <div>
-                                    <span class="btn btn-outline btn-success btn-file">
-                                        <span class="fileinput-new">Wybierz zdjecie</span>
-                                        <span class="fileinput-exists">Zmien</span>
+                                    <span class="btn btn-outline btn-outline-success btn-file">
+                                        <span class="fileinput-new">Wybierz zdjęcie</span>
+                                        <span class="fileinput-exists">Zmień</span>
                                         <input type="file" name="avatar">
                                     </span>
-                                    <a href="#" class="btn btn-outline btn-danger fileinput-exists" data-dismiss="fileinput">Usun</a>
+                                    <a href="#" class="btn btn-outline btn-outline-danger fileinput-exists" data-dismiss="fileinput">Usuń</a>
                                 </div>
                             </div>
                             @error('image')
-                            <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -37,7 +37,7 @@
                 <div class="col-md-6">
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <h4 class="alert-heading">Super!!!</h4>
+                            <h4 class="alert-heading">Zrobione!!!</h4>
                             <hr>
                             <p class="mb-0">{{ $message }}</p>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -57,7 +57,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group ">
-                                <label for="username">Nazwa Uzytkownika</label>
+                                <label for="username">Nazwa Użytkownika</label>
 
                                 <input id="username" type="text"
                                        class="form-control @error('username') is-invalid @enderror" name="username"
@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="email">Adres e-mail</label>
+                                <label for="email">Adres E-mail</label>
 
                                 <input id="email" type="email"
                                        aria-describedby="emailHelp"
@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="form-group ">
-                                <label for="password">Haslo</label>
+                                <label for="password">Hasło</label>
 
                                 <input id="password" type="password"
                                        aria-describedby="passwordHelp"
@@ -103,14 +103,14 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="password-confirm">Powtorz haslo</label>
+                                <label for="password-confirm">Potwierdź Hasło</label>
                                 <input id="password-confirm" type="password" class="form-control"
                                        name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Zapisz Zmiany</button>
+                        <div class="card-footer bg-white">
+                            <button type="submit" class=" btn btn-outline-success btn-block">Zapisz zmiany</button>
                         </div>
                     </div>
                 </div>
@@ -120,9 +120,8 @@
         <form action="{{ route('users.destroy', $user) }}" method="post">
             @method('DELETE')
             @csrf
-
-            <div class="row mt-3">
-                <div class="col-md-6 offset-md-6">
+            <div class="row ">
+                <div class="col-md-8 offset-md-2 mt-3">
                     <div class="card mb-2 text-center">
                         <div class="card-body">
                             <p><strong class="text-danger">Usuń konto</strong></p>
@@ -130,7 +129,7 @@
                                 <br>Wszystkie twoje wiadomości zostaną usunięte.
                                 <br>Proszę się upewnić.</p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer bg-white">
                             <button type="submit" class="btn btn-outline-danger">Usuń swoje konto</button>
                         </div>
                     </div>

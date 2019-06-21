@@ -5,13 +5,13 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
                 <div class="card">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="card-body">
                             <div class="form-group ">
-                                <label for="username">{{ __('Nazwa Uzytkownika') }}</label>
+                                <label for="username">{{ __('Nazwa Użytkownika') }}</label>
 
                                 <input id="username" type="text"
                                        class="form-control @error('username') is-invalid @enderror" name="username"
@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="email">{{ __('Adres e-mail') }}</label>
+                                <label for="email">{{ __('Adres E-mail') }}</label>
 
                                 <input id="email" type="email"
                                        aria-describedby="emailHelp"
@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="form-group ">
-                                <label for="password">{{ __('Haslo') }}</label>
+                                <label for="password">{{ __('Hasło') }}</label>
 
                                 <input id="password" type="password"
                                        aria-describedby="passwordHelp"
@@ -57,16 +57,16 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="password-confirm">{{ __('Powtorz haslo') }}</label>
+                                <label for="password-confirm">{{ __('Potwierdź Hasło') }}</label>
 
                                 <input id="password-confirm" type="password" class="form-control"
                                        name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
-                        <div class="card-footer">
+                        <div class="card-footer bg-white">
                             <button type="submit" class="btn btn-outline-secondary btn-block">
-                                {{ __('Zaloz Konto') }}
+                                {{ __('Załóż konto') }}
                             </button>
                         </div>
                     </form>

@@ -18,38 +18,39 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <button id="backToTop" title="Go to top"></button>
+
     <div class="container">
         <header class="logo-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
-                <div class="col-4 pt-1">
-                    @guest
-                        @if (Route::has('register'))
-                            <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">{{ __('Rejestracja') }}</a>
-                        @endif
-
-                    @else
-
-                    @endguest
-                </div>
-                <div class="col-4 text-center">
-                    <a class="logo-header-logo text-dark" href="{{ route('filmy') }}">{{ config('app.name', 'Laravel') }}</a>
-                </div>
-                <div class="col-4 d-flex justify-content-end align-items-center">
-                    @guest
-                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">{{ __('Logowanie') }}</a>
-                    @else
+                @guest
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 pt-1">
+                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">{{ __('Rejestracja') }}</a>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                        <a class="logo-header-logo text-dark" href="{{ route('filmy') }}">{{ config('app.name', 'Laravel') }}</a>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
+                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">{{ __('Zaloguj się') }}</a>
+                    </div>
+                @else
+                    <div class="col-6 text-left">
+                        <a class="logo-header-logo text-dark" href="{{ route('filmy') }}">{{ config('app.name', 'Laravel') }}</a>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end align-items-center">
                         <div class="dropdown">
                             <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ Auth::user()->username }} <span class="caret"></span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('users.index') }}">
-                                    Twoj Profil
+                                    Twój profil
                                 </a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                    {{ __('Wyloguj sie') }}
+                                    {{ __('Wyloguj się') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -57,16 +58,15 @@
                                 </form>
                             </div>
                         </div>
-                    @endguest
-                </div>
+                    </div>
+                @endguest
             </div>
         </header>
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="btn p-2 text-muted" href="{{ route('filmy') }}">Strona Glowna</a>
-                <a class="btn p-2 text-muted" href="{{ route('filmy') }}">Filmy</a>
-                <a class="btn p-2 text-muted" href="{{ route('wiadomosci') }}">Wiadomosci</a>
-
+                <a class="p-2 text-muted" href="{{ route('filmy') }}">Strona główna</a>
+                <a class="p-2 text-muted" href="{{ route('filmy') }}">Filmy</a>
+                <a class="p-2 text-muted" href="{{ route('wiadomosci') }}">Wiadomość</a>
             </nav>
         </div>
     </div>

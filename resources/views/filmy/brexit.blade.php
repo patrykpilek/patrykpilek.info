@@ -27,12 +27,4 @@
 		</div>
 	</main>
 
-	<footer class="text-muted">
-		<div class="container">
-			<p class="float-right">
-				<a href="#" class="btn">Back to top</a>
-			</p>
-		</div>
-	</footer>
-
 @endsection

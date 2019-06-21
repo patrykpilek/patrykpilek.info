@@ -22,14 +22,20 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h3>Wszystkie wiadomosci:</h3>
+                <h3>Wiadomość:</h3>
                 <hr>
                 @foreach($user->posts as $post)
-                    <div>
-                        <div class="lead">{{ $post->body }}</div>
-                        <div class="text-muted">{{ $post->created_at }}</div>
-                        <hr>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h5 class="mt-0"><strong>{{ $post->body }}</strong></h5>
+                                    <p class="mb-0">{{ $post->created_at }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 @endforeach
             </div>
         </div>

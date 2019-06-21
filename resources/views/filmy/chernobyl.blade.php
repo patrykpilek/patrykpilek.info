@@ -103,23 +103,14 @@
             </div>
         </div>
     </main>
-
-    <footer class="text-muted">
-        <div class="container">
-            <p class="float-right">
-                <a href="#" class="btn">Back to top</a>
-            </p>
-        </div>
-    </footer>
-
 @endsection
 
 @push('scripts')
     <script type="text/javascript">
         document.addEventListener('play', function (e) {
-            var videos = document.getElementsByTagName('video');
-            for (var i = 0, len = videos.length; i < len; i++) {
-                if (videos[i] != e.target) {
+            let videos = document.getElementsByTagName('video');
+            for (let i = 0, len = videos.length; i < len; i++) {
+                if (videos[i] !== e.target) {
                     videos[i].pause();
                 }
             }
