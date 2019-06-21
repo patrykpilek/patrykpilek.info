@@ -15,9 +15,7 @@ const PostContent = (props) => (
                                     <b>{props.post.user.username}</b>
                                 </a>{' '} - <small>{props.post.humanCreatedAt}</small>
                             </h6>
-                            <p className="mb-0">
-                                {props.post.body}
-                            </p>
+                            <p className="mb-0 text-justify">{props.post.body}</p>
                         </div>
                     </li>
                 </ul>

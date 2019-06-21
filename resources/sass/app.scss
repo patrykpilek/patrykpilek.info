@@ -7,6 +7,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
 #authors {
   img {
     margin-top: -50px;
@@ -39,7 +45,7 @@
 
 .logo-header-logo {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
+  font-size: 0.85rem;
 }
 
 .logo-header-logo:hover {
@@ -87,8 +93,8 @@ video {
   z-index: 1000;
 }
 #backToTop::after {
-  content: "\f077";
-  font-family: "FontAwesome", serif;
+  content: "\f35b";
+  font-family: 'Font Awesome 5 Free';
   font-weight: normal;
   font-style: normal;
   font-size: 2em;
@@ -108,7 +114,7 @@ video {
 }
 
 .poster-img {
-  height: 190px;
+  height: 230px;
 }
 
 // Small devices (landscape phones, 576px and up)
