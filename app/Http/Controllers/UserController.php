@@ -75,36 +75,27 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $data = $request->all();
-
-        if($request->input('password')) {
-            $data['password'] = $request->input('password');
-        } else {
-            $userpassowrd = $user->password;
-            $data['password'] = $userpassowrd;
-            $data['password_confirmation'] = $userpassowrd;
-        }
-
-        $validator = Validator::make($data, [
+        $request->validate([
             'username' => ['required', 'string', 'max:255', 'unique:users,username,' . $user->id],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
             'avatar' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
-        if ($validator->fails()) {
-            return redirect()->route('users.index')->withErrors($validator)->withInput();
+        $user->username = $request->username;
+        $user->email = $request->email;
+
+        if ( ! $request->input('password') == '') {
+            $user->password = Hash::make(trim($request->password));
         }
 
         if ($request->hasFile('avatar')) {
             $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
             $request->avatar->storeAs('public/avatars', $avatarName);
-            $data['avatar'] = $avatarName;
+            $user->avatar = $avatarName;
         }
 
-        $data['password'] = Hash::make(trim($request->password));
-
-        $user->update($data);
+        $user->save();
 
         return back()->with('success','Twój profil został zaktualizowany pomyślnie.');
     }
