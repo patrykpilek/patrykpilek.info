@@ -52,12 +52,22 @@
         <div class="social-icons">
             <ul class="list-unstyled text-center mb-0">
                 <li class="list-unstyled-item">
+                    <a href="{{ route('movies') }}">
+                        <i class="fas fa-film"></i>
+                    </a>
+                </li>
+                <li class="list-unstyled-item">
+                    <a href="{{ route('messenger') }}">
+                        <i class="far fa-comments"></i>
+                    </a>
+                </li>
+                <li class="list-unstyled-item">
                     <a href="https://twitter.com/PatrykPilek">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </li>
                 <li class="list-unstyled-item">
-                    <a href="https://www.youtube.com/channel/UCVZykydwdOKQZigRrV4aaEA">
+                    <a href="https://www.youtube.com/channel/UCVZykydwdOKQZigRrV4aaEA/videos">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </li>

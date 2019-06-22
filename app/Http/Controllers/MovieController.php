@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
-class FilmyController extends Controller
+class MovieController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -14,47 +14,47 @@ class FilmyController extends Controller
      */
     public function index()
     {
-        return view('filmy.index');
+        return view('movies.index');
     }
 
     public function koronajeden()
     {
-        return view('filmy.koronajeden');
+        return view('movies.koronajeden');
     }
 
     public function koronadwa()
     {
-        return view('filmy.koronadwa');
+        return view('movies.koronadwa');
     }
 
     public function chernobyl()
     {
-        return view('filmy.chernobyl');
+        return view('movies.chernobyl');
     }
 
     public function kursk()
     {
-        return view('filmy.kursk');
+        return view('movies.kursk');
     }
 
     public function brexit()
     {
-        return view('filmy.brexit');
+        return view('movies.brexit');
     }
 
     public function agora()
     {
-        return view('filmy.agora');
+        return view('movies.agora');
     }
 
     public function picasso()
     {
-        return view('filmy.picasso');
+        return view('movies.picasso');
     }
 
     public function albert_einstein()
     {
-        return view('filmy.albert_einstein');
+        return view('movies.albert_einstein');
     }
 
 }

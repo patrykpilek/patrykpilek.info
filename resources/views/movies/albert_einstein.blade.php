@@ -181,7 +181,6 @@
             </div>
         </div>
     </main>
-
 @endsection
 
 @push('scripts')

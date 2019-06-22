@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
@@ -20,7 +21,9 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('users.index', compact('user'));
+        $users = User::all();
+
+        return view('users.index', compact('user', 'users'));
     }
 
     /**
@@ -42,6 +45,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    /**
+     * @param User $user
+     * @return Factory|View
+     */
+    public function view(User $user)
+    {
+        return view('users.view', compact('user'));
     }
 
     /**

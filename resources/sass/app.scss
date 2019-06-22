@@ -28,14 +28,54 @@
   }
 }
 
-.image-avatar {
-  height: 50px;
+#backToTop {
+  display: inline-block;
+  background-color: #555;
   width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+  opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
 }
 
-.wszyscy_urzytkownicy {
-  width: 64px;
-  height: 64px;
+#backToTop::after {
+  content: "\f35b";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+
+#backToTop:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+
+#backToTop:active {
+  background-color: #555;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nounderline {
+  text-decoration: none !important
+}
+
+.image-avatar {
+  width: 60px;
+  height: 60px;
 }
 
 .logo-header {
@@ -76,45 +116,57 @@ video {
   max-height: 390px;
 }
 
-#backToTop {
-  display: inline-block;
-  background-color: #555;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: background-color .3s,
-  opacity .5s, visibility .5s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
-}
-#backToTop::after {
-  content: "\f35b";
-  font-family: 'Font Awesome 5 Free';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #fff;
-}
-#backToTop:hover {
-  cursor: pointer;
-  background-color: #333;
-}
-#backToTop:active {
-  background-color: #555;
-}
-#backToTop.show {
-  opacity: 1;
-  visibility: visible;
-}
-
 .poster-img {
   height: 230px;
+}
+
+.img-circle-small {
+  width: 60px;
+  height: 60px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  margin-bottom: 2px;
+}
+
+.status-online {
+  width: 16px;
+  height:16px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border: 2px solid #CCC;
+  margin-bottom: 2px;
+  background-color: green;
+  position: absolute;
+}
+
+.status-offline {
+  width: 16px;
+  height:16px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border: 2px solid #CCC;
+  margin-bottom: 2px;
+  background-color: #CCC;
+  position: absolute;
+}
+
+.avatar-status{
+  position: relative;
+  display: inline-block;
+}
+.topLeft{
+  top: 0;
+  left: 0;
+}
+.bottomRight{
+  bottom: 0;
+  right: 0;
 }
 
 // Small devices (landscape phones, 576px and up)

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany as HasManyAlias;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Cache;
 
 class User extends Authenticatable
 {
@@ -118,5 +119,13 @@ class User extends Authenticatable
     public function canUnFollow(User $user)
     {
         return $this->isFollowing($user);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isOnline()
+    {
+        return Cache::has('user-is-online-' . $this->id);
     }
 }

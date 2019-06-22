@@ -24,14 +24,14 @@
                         <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">{{ __('Rejestracja') }}</a>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
-                        <a class="logo-header-logo text-dark" href="{{ route('filmy') }}">{{ config('app.name', 'Laravel') }}</a>
+                        <a class="logo-header-logo text-dark" href="{{ route('coming_soon') }}">{{ config('app.name', 'Laravel') }}</a>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
                         <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">{{ __('Zaloguj się') }}</a>
                     </div>
                 @else
                     <div class="col-6 text-left">
-                        <a class="logo-header-logo text-dark" href="{{ route('filmy') }}">{{ config('app.name', 'Laravel') }}</a>
+                        <a class="logo-header-logo text-dark" href="{{ route('coming_soon') }}">{{ config('app.name', 'Laravel') }}</a>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center">
                         <div class="dropdown">
@@ -39,7 +39,7 @@
                                 {{ Auth::user()->username }} <span class="caret"></span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{{ route('users.index') }}">
+                                <a class="dropdown-item" href="{{ route('users.view', Auth::user()) }}">
                                     Twój profil
                                 </a>
                                 <div class="dropdown-divider"></div>
@@ -60,9 +60,9 @@
         </header>
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="{{ route('filmy') }}">Strona główna</a>
-                <a class="p-2 text-muted" href="{{ route('filmy') }}">Filmy</a>
-                <a class="p-2 text-muted" href="{{ route('wiadomosci') }}">Wiadomość</a>
+                <a class="p-2 text-muted" href="{{ route('coming_soon') }}">Strona główna</a>
+                <a class="p-2 text-muted" href="{{ route('movies') }}">Filmy</a>
+                <a class="p-2 text-muted" href="{{ route('messenger') }}">Wiadomość</a>
             </nav>
         </div>
     </div>
