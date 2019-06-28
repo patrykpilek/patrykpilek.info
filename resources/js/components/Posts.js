@@ -1,9 +1,8 @@
 import React from 'react';
-import axios from 'axios';
-import PostContent from './PostContent';
-import PostLoader from './PostLoader';
+import PostContent from './posts/PostContent';
+import PostLoader from './posts/PostLoader';
 
-class PostIndex extends React.Component {
+class Posts extends React.Component {
     constructor(props) {
         super(props);
         this.state =  {
@@ -34,7 +33,7 @@ class PostIndex extends React.Component {
             progress: true,
         }));
 
-        axios.post("/posts", {
+        window.axios.post("/posts", {
             'offset': this.state.posts.length
         }).then((response) => {
             this.setState(() => ({
@@ -53,7 +52,7 @@ class PostIndex extends React.Component {
                 progress: true,
             }));
 
-            axios.post("/posts", {
+            window.axios.post("/posts", {
                 'offset': this.state.posts.length
             }).then((response) => {
                 this.setState((prevState) => ({
@@ -69,7 +68,7 @@ class PostIndex extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        axios.post('/createPost', {
+        window.axios.post('/createPost', {
                 body: this.state.body
         }).then(response => {
             // console
@@ -135,7 +134,7 @@ class PostIndex extends React.Component {
     }
 }
 
-export default PostIndex;
+export default Posts;
 
 
 

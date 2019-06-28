@@ -62,11 +62,6 @@
                     </a>
                 </li>
                 <li class="list-unstyled-item">
-                    <a href="https://twitter.com/PatrykPilek">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-unstyled-item">
                     <a href="https://www.youtube.com/channel/UCVZykydwdOKQZigRrV4aaEA/videos">
                         <i class="fab fa-youtube"></i>
                     </a>

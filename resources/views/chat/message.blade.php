@@ -3,5 +3,5 @@
 @section('title', 'Wiadomosci')
 
 @section('messenger')
-    <div id="react-posts"></div>
+    <div id="posts"></div>
 @endsection
