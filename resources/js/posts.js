@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PostIndex from "./components/Posts";
+import Posts from "./components/Posts";
 
 if (document.getElementById('posts')) {
-    ReactDOM.render(<PostIndex />, document.getElementById('posts'));
+    ReactDOM.render(<Posts />, document.getElementById('posts'));
 }

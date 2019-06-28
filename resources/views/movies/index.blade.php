@@ -73,18 +73,8 @@
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-2 pb-2">
                 <div class="card">
-                    <a href="{{ route('albert_einstein') }}" class="text-decoration-none">
-                        <img src="{{ url('storage/movie_posters/albert_einstein_poster_vertical.jpg') }}" class="card-img poster-img" alt="Albert Einstein">
-                        <div class="card-footer bg-dark text-white">
-                            <small>Albert Einstein</small>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-2 pb-2">
-                <div class="card">
                     <a href="{{ route('picasso') }}" class="text-decoration-none">
-                        <img src="{{ url('storage/movie_posters/picasso_vertical.jpg') }}" class="card-img poster-img" alt="Picasso">
+                        <img src="{{ url('storage/movie_posters/picasso_poster_vertical.jpg') }}" class="card-img poster-img" alt="Picasso">
                         <div class="card-footer bg-dark text-white">
                             <small>Picasso</small>
                         </div>
