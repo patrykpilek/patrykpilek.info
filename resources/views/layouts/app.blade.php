@@ -22,13 +22,13 @@
             <div class="row flex-nowrap justify-content-between align-items-center">
                 @guest
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 pt-1">
-                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">{{ __('Rejestracja') }}</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
                         <a class="logo-header-logo text-dark" href="{{ url('/') }}">{{ config('app.name') }}</a>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
-                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">{{ __('Zaloguj się') }}</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </div>
                 @else
                     <div class="col-6 text-left">
@@ -41,7 +41,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('users.view', Auth::user()) }}">
-                                    Twój profil
+                                    Profile
                                 </a>
                                 <a class="dropdown-item" href="{{ route('movies.index') }}">
                                     Movies
@@ -50,7 +50,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                    {{ __('Wyloguj się') }}
+                                    {{ __('Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -64,8 +64,8 @@
         </header>
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="{{ url('/') }}">Filmy</a>
-                <a class="p-2 text-muted" href="{{ route('messenger') }}">Wiadomość</a>
+                <a class="p-2 text-muted" href="{{ url('/') }}">Movies</a>
+                <a class="p-2 text-muted" href="{{ route('messenger') }}">Messenger</a>
             </nav>
         </div>
 

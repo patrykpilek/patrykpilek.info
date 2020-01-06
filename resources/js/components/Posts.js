@@ -118,7 +118,7 @@ class Posts extends React.Component {
                                     className="form-control"
                                     rows="3"
                                     maxLength="290"
-                                    placeholder="Napisz wiadomosc..."
+                                    placeholder="Write a message..."
                                     required
                                 />
                             </div>

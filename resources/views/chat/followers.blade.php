@@ -9,9 +9,9 @@
                 <div class="info-header mb-5">
                     <h1 class="text-black-50 pb-3">
                         @if(Auth::user()->followers->count())
-                            Obserwujący <span class="badge badge-secondary">{{ Auth::user()->followers->count() }}</span>
+                            Followers <span class="badge badge-secondary">{{ Auth::user()->followers->count() }}</span>
                         @else
-                            Nie masz obserwujący
+                            You don't have followers
                         @endif
                     </h1>
                     <hr>
@@ -32,7 +32,6 @@
                                         <span class="status-offline bottomRight">&nbsp</span>
                                     @endif
                                 </div>
-{{--                                <img src="{{ $user->image }}" alt="" class="img-fluid rounded-circle wszyscy_urzytkownicy mb-3">--}}
                                 <h6 class="text-muted">{{ $user->username }}</h6>
                             </div>
                         </a>

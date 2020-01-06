@@ -14,7 +14,7 @@ const PostLoader = (props) => (
     {
         props.completed && (
             <div className="text-center">
-                <h5><strong>Nie ma wiecej wiadomosci</strong></h5>
+                <h5><strong>There is no more messages</strong></h5>
             </div>
         )
     }

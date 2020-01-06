@@ -14,24 +14,24 @@
                         <ul class="list-group list-group-flush">
                             <a href="{{ route('messenger') }}" class="text-muted nounderline" >
                                 <li class="list-group-item d-flex justify-content-between align-items-center {{ Request::is('messenger') ? 'active' : '' }}">
-                                    Wiadomosci
+                                    Messenger
                                 </li>
                             </a>
                             <a href="{{ route('following') }}" class="text-muted nounderline" >
                                 <li class="list-group-item d-flex justify-content-between align-items-center {{ Request::is('following') ? 'active' : '' }}">
-                                    Podążający
+                                    Following
                                     <span class="badge badge-dark badge-pill">{{ Auth::user()->following->count() }}</span>
                                 </li>
                             </a>
                             <a href="{{ route('followers') }}" class="text-muted nounderline" >
                                 <li class="list-group-item d-flex justify-content-between align-items-center {{ Request::is('followers') ? 'active' : '' }}">
-                                    Obserwujący
+                                    Followers
                                     <span class="badge badge-dark badge-pill">{{ Auth::user()->followers->count() }}</span>
                                 </li>
                             </a>
                             <a href="{{ route('users.index') }}" class="text-muted nounderline" >
                                 <li class="list-group-item d-flex justify-content-between align-items-center {{ Request::is('users') ? 'active' : '' }}">
-                                    Wszyscy użytkownicy
+                                    Users
                                     <span class="badge badge-dark badge-pill">{{ $users->count() - 1 }}</span>
                                 </li>
                             </a>

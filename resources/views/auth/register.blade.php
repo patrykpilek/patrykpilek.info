@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Rejestracja')
+@section('title', 'Register')
 
 @section('content')
     <div class="container">
@@ -10,63 +10,61 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="card-body">
+                            <h4 class="text-center mb-3">{{ __('Register') }}</h4>
                             <div class="form-group ">
-                                <label for="username">{{ __('Nazwa Użytkownika') }}</label>
+                                <label for="username">{{ __('Username') }}</label>
 
                                 <input id="username" type="text"
                                        class="form-control @error('username') is-invalid @enderror" name="username"
-                                       value="{{ old('username') }}" required autocomplete="name" autofocus>
+                                       value="{{ old('username') }}" autofocus>
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                                <label for="email">{{ __('Adres E-mail') }}</label>
+                                <label for="email">{{ __('E-Mail Address') }}</label>
 
                                 <input id="email" type="email"
-                                       aria-describedby="emailHelp"
                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                       value="{{ old('email') }}" required autocomplete="email">
+                                       value="{{ old('email') }}">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
-                                <small id="emailHelp" class="form-text text-muted">Nigdy nie udostępnimy twojego adresu e-maila innym osobom.</small>
                             </div>
 
                             <div class="form-group ">
-                                <label for="password">{{ __('Hasło') }}</label>
+                                <label for="password">{{ __('Password') }}</label>
 
                                 <input id="password" type="password"
                                        aria-describedby="passwordHelp"
-                                       class="form-control @error('password') is-invalid @enderror" name="password"
-                                       required autocomplete="new-password">
+                                       class="form-control @error('password') is-invalid @enderror" name="password" >
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
-                                <small id="passwordHelp" class="form-text text-muted">Użyj co najmniej 8 znaków.</small>
+                                <small id="passwordHelp" class="form-text text-muted">Use at least 8 characters.</small>
                             </div>
 
                             <div class="form-group">
-                                <label for="password-confirm">{{ __('Potwierdź Hasło') }}</label>
+                                <label for="password-confirm">{{ __('Confirm Password') }}</label>
 
                                 <input id="password-confirm" type="password" class="form-control"
-                                       name="password_confirmation" required autocomplete="new-password">
+                                       name="password_confirmation" >
                             </div>
                         </div>
 
                         <div class="card-footer bg-white">
                             <button type="submit" class="btn btn-outline-secondary btn-block">
-                                {{ __('Załóż konto') }}
+                                {{ __('Register') }}
                             </button>
                         </div>
                     </form>

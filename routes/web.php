@@ -3,9 +3,9 @@
 Route::get('/', 'MovieController@movies');
 Route::get('movie/{movie}', 'MovieController@display')->name('movies.display');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['verified', 'auth']], function() {
     // Messenger
     Route::get('/messenger', 'MessengerController@messenger')->name('messenger');
     Route::get('/following', 'MessengerController@following')->name('following');

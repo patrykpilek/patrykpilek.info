@@ -2,17 +2,19 @@
 
 namespace App;
 
+use App\Jobs\PasswordResetQueued;
+use App\Jobs\VerifyEmailQueued;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Cache;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
     protected $fillable = [
-        'username', 'email', 'password', 'avatar',
+        'username', 'slug', 'email', 'password', 'avatar',
     ];
 
     protected $hidden = [
@@ -45,7 +47,7 @@ class User extends Authenticatable
 
     public function getRouteKeyName()
     {
-        return 'username';
+        return 'slug';
     }
 
     public function isNotTheUser(User $user)
@@ -74,5 +76,15 @@ class User extends Authenticatable
     public function isOnline()
     {
         return Cache::has('user-is-online-' . $this->id);
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        VerifyEmailQueued::dispatch($this);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        PasswordResetQueued::dispatch($this, $token);
     }
 }

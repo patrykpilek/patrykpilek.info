@@ -6,7 +6,7 @@
     <section id="staff" class="py-5 text-center">
         <div class="container">
             <h1 class="text-black-50 pb-3">
-                Wszyscy użytkownicy <span class="badge badge-secondary">{{ $users->count() }}</span>
+                Users <span class="badge badge-secondary">{{ $users->count() - 1 }}</span>
             </h1>
             <hr>
             <div class="row">
@@ -23,9 +23,9 @@
                             </div>
                             <h6>{{ $user->username }}</h6>
                             @if(Auth::user()->isFollowing($user))
-                                <a href="{{ route('users.unfollow', $user) }}" class="btn btn-primary btn-sm">Nie obserwuj</a>
+                                <a href="{{ route('users.unfollow', $user) }}" class="btn btn-primary btn-sm">Unfollow</a>
                             @else
-                                <a href="{{ route('users.follow', $user) }}" class="btn btn-success btn-sm">Obserwuj</a>
+                                <a href="{{ route('users.follow', $user) }}" class="btn btn-success btn-sm">Follow</a>
                             @endif
                         </div>
                     @endif

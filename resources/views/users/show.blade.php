@@ -13,16 +13,16 @@
                         <p class="card-text">{{ $user->email }}</p>
                         @if(Auth::user()->isNotTheUser($user))
                             @if(Auth::user()->isFollowing($user))
-                                <a href="{{ route('users.unfollow', $user) }}" class="btn btn-primary">Nie obserwuj</a>
+                                <a href="{{ route('users.unfollow', $user) }}" class="btn btn-primary">Unfollow</a>
                             @else
-                                <a href="{{ route('users.follow', $user) }}" class="btn btn-success">Obserwuj</a>
+                                <a href="{{ route('users.follow', $user) }}" class="btn btn-success">Follow</a>
                             @endif
                         @endif
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
-                <h3>Wiadomość:</h3>
+                <h3>Messages:</h3>
                 <hr>
                 @foreach($user->posts as $post)
                     <div class="card mb-2">

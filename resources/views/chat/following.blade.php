@@ -9,9 +9,9 @@
                 <div class="info-header mb-5">
                     <h1 class="text-black-50 pb-3">
                         @if(Auth::user()->following->count())
-                            Podążający <span class="badge badge-secondary">{{ Auth::user()->following->count() }}</span>
+                            Following <span class="badge badge-secondary">{{ Auth::user()->following->count() }}</span>
                         @else
-                            Nie masz podążających
+                            You don't have following
                         @endif
                     </h1>
                     <hr>
@@ -33,7 +33,6 @@
                                         <span class="status-offline bottomRight">&nbsp</span>
                                     @endif
                                 </div>
-{{--                                <img src="{{ $user->image }}" alt="" class="img-fluid rounded-circle wszyscy_urzytkownicy mb-3">--}}
                                 <h6 class="text-muted">{{ $user->username }}</h6>
                             </div>
                         </a>

@@ -40,14 +40,4 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
-    /**
-     * Redirect to specif path after logout
-     * @param Request $request
-     * @return RedirectResponse|Redirector
-     */
-    public function logout(Request $request){
-        Auth::logout();
-        return redirect('/movies');
-    }
 }

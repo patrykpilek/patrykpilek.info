@@ -11,7 +11,7 @@ const PostContent = (props) => (
                              alt={props.post.user.username} />
                         <div className="media-body">
                             <h6 className="mt-0">
-                                <a href={`/users/${props.post.user.username}`}>
+                                <a href={`/users/${props.post.user.slug}`}>
                                     <b>{props.post.user.username}</b>
                                 </a>{' '} - <small>{props.post.humanCreatedAt}</small>
                             </h6>
