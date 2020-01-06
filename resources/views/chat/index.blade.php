@@ -32,7 +32,7 @@
                             <a href="{{ route('users.index') }}" class="text-muted nounderline" >
                                 <li class="list-group-item d-flex justify-content-between align-items-center {{ Request::is('users') ? 'active' : '' }}">
                                     Wszyscy użytkownicy
-                                    <span class="badge badge-dark badge-pill">{{ $users->count() }}</span>
+                                    <span class="badge badge-dark badge-pill">{{ $users->count() - 1 }}</span>
                                 </li>
                             </a>
                         </ul>

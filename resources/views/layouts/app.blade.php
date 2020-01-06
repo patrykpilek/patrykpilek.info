@@ -7,11 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | {{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/plugins/jasnyBootstrap/jasny-bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 </head>
 <body>
     <button id="backToTop" title="Go to top"></button>
@@ -24,14 +25,14 @@
                         <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">{{ __('Rejestracja') }}</a>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
-                        <a class="logo-header-logo text-dark" href="{{ route('coming_soon') }}">{{ config('app.name', 'Laravel') }}</a>
+                        <a class="logo-header-logo text-dark" href="{{ url('/') }}">{{ config('app.name') }}</a>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
                         <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">{{ __('Zaloguj się') }}</a>
                     </div>
                 @else
                     <div class="col-6 text-left">
-                        <a class="logo-header-logo text-dark" href="{{ route('coming_soon') }}">{{ config('app.name', 'Laravel') }}</a>
+                        <a class="logo-header-logo text-dark" href="{{ url('/')  }}">{{ config('app.name') }}</a>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center">
                         <div class="dropdown">
@@ -41,6 +42,9 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('users.view', Auth::user()) }}">
                                     Twój profil
+                                </a>
+                                <a class="dropdown-item" href="{{ route('movies.index') }}">
+                                    Movies
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -60,11 +64,13 @@
         </header>
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="{{ route('coming_soon') }}">Strona główna</a>
-                <a class="p-2 text-muted" href="{{ route('movies') }}">Filmy</a>
+                <a class="p-2 text-muted" href="{{ url('/') }}">Filmy</a>
                 <a class="p-2 text-muted" href="{{ route('messenger') }}">Wiadomość</a>
             </nav>
         </div>
+
+        @include('partials.alert')
+
     </div>
 
     <main class="py-4">
@@ -74,6 +80,9 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ asset('js/plugins/jasnyBootstrap/jasny-bootstrap.min.js') }}" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
 
     <script>
         window.Laravel = <?php echo json_encode([
