@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-8 offset-2">
                         <video poster="{{ url('storage/movie_posters/' . $movie->poster_horizontal) }}" controls controlsList="nodownload" preload="none">
-                            <source src="{{ url('storage/movies/'. Str::slug($videos->first()->title, '_') . '/' . $videos->first()->video_filename ) }}" type="video/mp4">
+                            <source id="theVideo" src="{{ url('storage/movies/'. Str::slug($movie->title, '_') . '/' . $videos->first()->video_filename ) }}" type="video/mp4">
                             {{--                                <source src="{{ $videos->first()->getS3Video() }}" type="video/mp4">--}}
                             Your browser does not support the video tag.
                         </video>
@@ -64,7 +64,7 @@
                                      aria-labelledby="list-odc{{$loop->iteration}}-list">
                                     <p class="text-center">{{ $loop->iteration }}. {{ Str::title($video->title) }}</p>
                                     <video class="embed-responsive-item" poster="{{ url('storage/movie_posters/' . $movie->poster_horizontal) }}" controls controlsList="nodownload" preload="none">
-                                        <source src="{{ url('storage/movies/'. Str::slug($video->first()->title, '_') . '/' . $video->video_filename ) }}" type="video/mp4">
+                                        <source src="{{ url('storage/movies/'. Str::slug($movie->title, '_') . '/' . $video->video_filename ) }}" type="video/mp4">
                                         {{--                                            <source src="{{ $video->getS3Video() }}" type="video/mp4">--}}
                                         Your browser does not support the video tag.
                                     </video>

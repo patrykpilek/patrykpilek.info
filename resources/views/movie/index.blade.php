@@ -8,6 +8,8 @@
             <div class="card-header bg-white">
                 Movies
                 <div class="float-right">
+                    <a href="{{ route('movies.file.views') }}" class="btn btn-sm btn-outline-secondary"><i class="far fa-eye"></i>&nbsp;Views</a>
+
                     <a href="{{ route('videos.index') }}" class="btn btn-sm btn-outline-info"><i class="fas fa-video"></i>&nbsp;All Videos</a>
                     <a href="{{ route('movies.create') }}" class="btn btn-sm btn-outline-success"><i class="fas fa-plus"></i>&nbsp;Add Movie</a>
                 </div>

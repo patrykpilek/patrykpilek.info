@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Movie;
+use App\Video;
+use App\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -136,5 +138,43 @@ class MovieController extends Controller
     {
         $videos = $movie->videos()->where('movie_id', $movie->id)->get();
         return view('movie.display', compact('movie', 'videos'));
+    }
+
+    public function increaseViewVideo(Request $request)
+    {
+        $videos = Video::all();
+        $videoUrl = $request->videoUrl;
+        $title = null;
+
+        foreach( $videos as $video ) {
+            if(Str::contains($videoUrl, $video->video_filename)) {
+                $title = $video->video_filename;
+                $video_view = View::where('page_name', $title)->first();
+                if($video_view == null) {
+                    $newView = new View();
+                    $newView->page_name = $title;
+                    $newView->view_count = 1;
+                    $newView->ip = $request->ip();
+                    $newView->save();
+                }
+
+                if($video_view->ip != $request->ip()) {
+                    $newView = new View();
+                    $newView->page_name = $title;
+                    $newView->view_count = 1;
+                    $newView->ip = $request->ip();
+                    $newView->save();
+                }
+
+                if($video_view->ip == $request->ip()) {
+                    $video_view->increment('view_count');
+                }
+            }
+        }
+
+        return response()->json([
+            'videoFileName' => $title,
+            'message' => 'Success'
+        ], 200);
     }
 }
