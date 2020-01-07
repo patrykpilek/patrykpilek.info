@@ -5,6 +5,8 @@ Route::get('movie/{movie}', 'MovieController@display')->name('movies.display');
 
 Route::post('/increaseViewVideo', 'MovieController@increaseViewVideo');
 
+Route::post('/loadmore','MovieController@loadMoreData' );
+
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['verified', 'auth']], function() {

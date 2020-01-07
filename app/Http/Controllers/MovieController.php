@@ -130,7 +130,7 @@ class MovieController extends Controller
 
     public function movies()
     {
-        $movies = Movie::orderBy('title', 'asc')->get();
+        $movies = Movie::orderBy('created_at', 'DESC')->limit(12)->get();
         return view('movie.movies', compact('movies'));
     }
 
@@ -176,5 +176,40 @@ class MovieController extends Controller
             'videoFileName' => $title,
             'message' => 'Success'
         ], 200);
+    }
+
+    public function loadMoreData(Request $request)
+    {
+        $output = '';
+        $id = $request->id;
+
+        $movies = Movie::where('id','<',$id)->orderBy('created_at','DESC')->limit(12)->get();
+
+        if(!$movies->isEmpty()) {
+            foreach($movies as $movie)
+            {
+                $url = url('movie/'.$movie->slug);
+                $moviePoster = url('storage/movie_posters/'.$movie->poster_vertical);
+                $movieTitle = Str::limit(Str::title($movie->title) , 15, ' (...)');
+
+                $output .= '
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 pb-2">
+                        <div class="card bg-dark text-white">
+                            <a href="'. $url .'" class="text-decoration-none">
+                                <img src="'. $moviePoster .'" class="card-img poster-img" alt="'. $movie->title .'">
+                                <div class="card-footer bg-dark text-white">
+                                    <small>'. $movieTitle .'</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>';
+            }
+
+            $output .= '<div class="row col-6 offset-3 mt-4" id="remove-row">
+                            <button id="btn-more" data-id="'.$movie->id.'" class="btn btn-outline-secondary btn-block">Load More</button>
+                        </div>';
+
+            echo $output;
+        }
     }
 }

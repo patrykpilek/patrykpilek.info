@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row" id="load-data">
             @if( ! $movies->count() )
                 <div class="col-12">
                     <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -27,7 +27,41 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="row col-6 offset-3 mt-4" id="remove-row">
+                    <button id="btn-more" data-id="{{ $movie->id }}" class="btn btn-outline-secondary btn-block">Load More</button>
+                </div>
             @endif
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(document).on('click','#btn-more',function() {
+
+                let id = $(this).data('id');
+                $("#btn-more").html("Loading....");
+
+                $.ajax({
+                    url: '{{ url("/loadmore") }}',
+                    method: "POST",
+                    data: {
+                        id: id,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    dataType: "text",
+
+                    success: function (data) {
+                        if(data !== '') {
+                            $('#remove-row').remove();
+                            $('#load-data').append(data);
+                        } else {
+                            $('#btn-more').html("No More");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+@endpush

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Post extends Model
 {
@@ -20,6 +21,6 @@ class Post extends Model
     }
 
     public function getHumanCreatedAtAttribute() {
-        return $this->created_at->diffForHumans();
+        return Carbon::parse($this->created_at)->isoFormat('Do MMMM YYYY, h:mm:ss a');
     }
 }
