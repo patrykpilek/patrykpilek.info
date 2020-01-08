@@ -1,6 +1,6 @@
 @extends('chat.index')
 
-@section('title', 'Following')
+@section('title', __('app.following'))
 
 @section('messenger')
     <section id="authors" class="my-5 text-center">
@@ -9,9 +9,9 @@
                 <div class="info-header mb-5">
                     <h1 class="text-black-50 pb-3">
                         @if(Auth::user()->following->count())
-                            Following <span class="badge badge-secondary">{{ Auth::user()->following->count() }}</span>
+                            @lang('app.following') <span class="badge badge-secondary">{{ Auth::user()->following->count() }}</span>
                         @else
-                            You don't have following
+                            @lang('app.you_dont_have_following')
                         @endif
                     </h1>
                     <hr>

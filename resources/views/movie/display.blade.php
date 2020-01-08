@@ -8,9 +8,9 @@
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="alert alert-info alert-dismissible fade show" role="alert">
-                        <h4 class="alert-heading">This movie has no video file yet.</h4>
+                        <h4 class="alert-heading">@lang('app.this_movie_has_no_video_file_yet')</h4>
                         <hr>
-                        <p class="mb-0">Please be patient. I'm working on adding a file.</p>
+                        <p class="mb-0">@lang('app.please_by_patient_im_working_on_adding_a_file')</p>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <video poster="{{ url('storage/movie_posters/' . $movie->poster_horizontal) }}" controls controlsList="nodownload" preload="none">
                             <source id="theVideo" src="{{ url('storage/movies/'. Str::slug($movie->title, '_') . '/' . $videos->first()->video_filename ) }}" type="video/mp4">
                             {{--                                <source src="{{ $videos->first()->getS3Video() }}" type="video/mp4">--}}
-                            Your browser does not support the video tag.
+                            @lang('app.your_browser_does_not_support_the_video_tag')
                         </video>
                         <p>{{ $videos->first()->description }}</p>
                     </div>
@@ -47,7 +47,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
-                        <p class="text-center">Odcinki</p>
+                        <p class="text-center">@lang('app.episodes')</p>
                         <div class="list-group" id="list-tab" role="tablist">
                             @foreach($videos as $video)
                                 <a class="list-group-item list-group-item-action @if ($loop->first) active @endif" id="list-odc{{$loop->iteration}}-list"
@@ -66,7 +66,7 @@
                                     <video class="embed-responsive-item" poster="{{ url('storage/movie_posters/' . $movie->poster_horizontal) }}" controls controlsList="nodownload" preload="none">
                                         <source src="{{ url('storage/movies/'. Str::slug($movie->title, '_') . '/' . $video->video_filename ) }}" type="video/mp4">
                                         {{--                                            <source src="{{ $video->getS3Video() }}" type="video/mp4">--}}
-                                        Your browser does not support the video tag.
+                                        @lang('app.your_browser_does_not_support_the_video_tag')
                                     </video>
                                     <p>{{ $video->description }}</p>
                                 </div>

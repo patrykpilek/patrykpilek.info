@@ -22,35 +22,39 @@
             <div class="row flex-nowrap justify-content-between align-items-center">
                 @guest
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 pt-1">
-                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">@lang('app.register')</a>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
                         <a class="logo-header-logo text-dark" href="{{ url('/') }}">{{ config('app.name') }}</a>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
-                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="text-muted mr-2" href="{{ url('lang/en') }}">EN</a>
+                        <a class="text-muted mr-2" href="{{ url('lang/pl') }}">PL</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">@lang('app.login')</a>
                     </div>
                 @else
                     <div class="col-6 text-left">
                         <a class="logo-header-logo text-dark" href="{{ url('/')  }}">{{ config('app.name') }}</a>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center">
+                        <a class="text-muted mr-2" href="{{ url('lang/en') }}">EN</a>
+                        <a class="text-muted mr-2" href="{{ url('lang/pl') }}">PL</a>
                         <div class="dropdown">
                             <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ Auth::user()->username }} <span class="caret"></span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('users.view', Auth::user()) }}">
-                                    Profile
+                                    @lang('app.profile')
                                 </a>
                                 <a class="dropdown-item" href="{{ route('movies.index') }}">
-                                    Movies
+                                    @lang('app.movies')
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    @lang('app.logout')
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -64,8 +68,8 @@
         </header>
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="{{ url('/') }}">Movies</a>
-                <a class="p-2 text-muted" href="{{ route('messenger') }}">Messenger</a>
+                <a class="p-2 text-muted" href="{{ url('/') }}">@lang('app.movies')</a>
+                <a class="p-2 text-muted" href="{{ route('messenger') }}">@lang('app.messenger')</a>
             </nav>
         </div>
 

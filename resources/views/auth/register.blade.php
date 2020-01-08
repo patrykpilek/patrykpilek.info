@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Register')
+@section('title', __('app.register'))
 
 @section('content')
     <div class="container">
@@ -10,9 +10,9 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="card-body">
-                            <h4 class="text-center mb-3">{{ __('Register') }}</h4>
+                            <h4 class="text-center mb-3">@lang('app.register')</h4>
                             <div class="form-group ">
-                                <label for="username">{{ __('Username') }}</label>
+                                <label for="username">@lang('app.username')</label>
 
                                 <input id="username" type="text"
                                        class="form-control @error('username') is-invalid @enderror" name="username"
@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="email">{{ __('E-Mail Address') }}</label>
+                                <label for="email">@lang('app.email_address')</label>
 
                                 <input id="email" type="email"
                                        class="form-control @error('email') is-invalid @enderror" name="email"
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-group ">
-                                <label for="password">{{ __('Password') }}</label>
+                                <label for="password">@lang('app.password')</label>
 
                                 <input id="password" type="password"
                                        aria-describedby="passwordHelp"
@@ -51,11 +51,11 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <small id="passwordHelp" class="form-text text-muted">Use at least 8 characters.</small>
+                                <small id="passwordHelp" class="form-text text-muted">@lang('app.use_at_least_8_characters').</small>
                             </div>
 
                             <div class="form-group">
-                                <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                                <label for="password-confirm">@lang('app.confirm_password')</label>
 
                                 <input id="password-confirm" type="password" class="form-control"
                                        name="password_confirmation" >
@@ -64,7 +64,7 @@
 
                         <div class="card-footer bg-white">
                             <button type="submit" class="btn btn-outline-secondary btn-block">
-                                {{ __('Register') }}
+                                @lang('app.register')
                             </button>
                         </div>
                     </form>

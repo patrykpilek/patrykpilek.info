@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Movies')
+@section('title', __('app.movies'))
 
 @section('content')
     <div class="container">
@@ -11,7 +11,7 @@
             @if( ! $movies->count() )
                 <div class="col-12">
                     <div class="alert alert-info alert-dismissible fade show" role="alert">
-                        <p>No record found.</p>
+                        <p>@lang('app.no_record_found')</p>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -41,7 +41,7 @@
                 @if(!($id == 0))
                     @if($movies->count() >= 12 )
                         <div class="col-12 mt-4" id="remove-row">
-                            <button id="btn-more" data-id="{{ $id }}" class="btn btn-outline-secondary btn-block btn-block col-6 offset-3">Load More</button>
+                            <button id="btn-more" data-id="{{ $id }}" class="btn btn-outline-secondary btn-block btn-block col-6 offset-3">@lang('app.load_more')</button>
                         </div>
                     @endif
                 @endif
@@ -55,7 +55,7 @@
             $(document).on('click','#btn-more',function() {
 
                 let id = $(this).data('id');
-                $("#btn-more").html("Loading....");
+                $("#btn-more").html(@lang('app.loading'));
 
                 $.ajax({
                     url: '{{ url("/loadmore") }}',
@@ -71,7 +71,7 @@
                             $('#remove-row').remove();
                             $('#load-data').append(data);
                         } else {
-                            $('#btn-more').html("No More");
+                            $('#btn-more').html(@lang('app.no_more'));
                         }
                     }
                 });

@@ -9,11 +9,11 @@
                     <div class="fileinput-preview fileinput-exists img-thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                     <div>
                         <span class="btn btn-outline btn-outline-success btn-file btn-sm">
-                            <span class="fileinput-new">Select image</span>
-                            <span class="fileinput-exists">Change</span>
+                            <span class="fileinput-new">@lang('app.select_image')</span>
+                            <span class="fileinput-exists">@lang('app.change')</span>
                             <input type="file" name="poster_vertical">
                         </span>
-                        <a href="#" class="btn btn-outline btn-outline-danger fileinput-exists btn-sm" data-dismiss="fileinput">Remove</a>
+                        <a href="#" class="btn btn-outline btn-outline-danger fileinput-exists btn-sm" data-dismiss="fileinput">@lang('app.remove')</a>
                     </div>
                 </div>
                 @error('poster_vertical')
@@ -28,7 +28,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="form-group ">
-                    <label for="title">Title</label>
+                    <label for="title">@lang('app.title')</label>
 
                     <input id="title"
                            type="text"
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="year">Year</label>
+                    <label for="year">@lang('app.year')</label>
                     <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
                         <input id="year"
                                name="year"
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="description">@lang('app.description')</label>
 
                     <textarea id="description"
                               class="form-control @error('description') is-invalid @enderror"
@@ -90,11 +90,11 @@
                     <div class="fileinput-preview fileinput-exists img-thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                     <div>
                         <span class="btn btn-outline btn-outline-success btn-file btn-sm">
-                            <span class="fileinput-new">Select image</span>
-                            <span class="fileinput-exists">Change</span>
+                            <span class="fileinput-new">@lang('app.select_image')</span>
+                            <span class="fileinput-exists">@lang('app.change')</span>
                             <input type="file" name="poster_horizontal">
                         </span>
-                        <a href="#" class="btn btn-outline btn-outline-danger fileinput-exists btn-sm" data-dismiss="fileinput">Remove</a>
+                        <a href="#" class="btn btn-outline btn-outline-danger fileinput-exists btn-sm" data-dismiss="fileinput">@lang('app.remove')</a>
                     </div>
                 </div>
                 @error('poster_horizontal')

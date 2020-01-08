@@ -3,12 +3,12 @@
     <input name="movieId" type="hidden" value="{{ $movie->id }}">
 
     <div class="form-group ">
-        <label for="movieTitle">Movie Title</label>
+        <label for="movieTitle">@lang('app.movie_title')</label>
         <input type="text" id="movieTitle" class="form-control" value="{{ Str::title($movie->title) }}" readonly>
     </div>
 
     <div class="form-group ">
-        <label for="title">Video Title</label>
+        <label for="title">@lang('app.video_title')</label>
 
         <input id="title"
                type="text"
@@ -23,7 +23,7 @@
     </div>
 
     <div class="form-group ">
-        <label for="duration">Duration</label>
+        <label for="duration">@lang('app.duration')</label>
 
         <input id="duration"
                type="text"
@@ -37,13 +37,13 @@
             <small><strong>{{ $message }}</strong></small>
         </span>
         @enderror
-        <small id="durationHelp" class="form-text text-muted">Please write duration in minutes. example: 110.</small>
+        <small id="durationHelp" class="form-text text-muted">@lang('app.please_write_duration_in_minutes')</small>
     </div>
 
 {{--    <input type="file" name="video" id="video">--}}
 
     <div class="forum-group mb-3">
-        <label for="video_filename">Video Filename</label>
+        <label for="video_filename">@lang('app.video_filename')</label>
 
         <input id="video_filename"
                type="text"
@@ -57,11 +57,11 @@
             <small><strong>{{ $message }}</strong></small>
         </span>
         @enderror
-        <small id="filenameHelp" class="form-text text-muted">Example: moviename, or serialname_S01E01.</small>
+        <small id="filenameHelp" class="form-text text-muted">@lang('app.example_moviename_or_serialname')</small>
     </div>
 
     <div class="form-group">
-        <label for="description">Video Description</label>
+        <label for="description">@lang('app.video_description')</label>
 
         <textarea id="description"
                   class="form-control @error('description') is-invalid @enderror"

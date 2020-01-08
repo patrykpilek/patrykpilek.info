@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-@section('title', 'All Videos')
+@section('title', __('app.all_video_files'))
 
 @section('content')
 
     <div class="container">
         <div class="card">
             <div class="card-header bg-white">
-                All video files
+                @lang('app.all_video_files')
                 <div class="float-right">
-                    <a href="{{ route('movies.index') }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-backward"></i>&nbsp;Back</a>
+                    <a href="{{ route('movies.index') }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-backward"></i>&nbsp;@lang('app.back')</a>
                 </div>
             </div>
             @if( ! $videos->count() )
                 <div class="card-body">
-                    No record found.
+                    @lang('app.no_record_found')
                 </div>
             @else
                 <div class="card-body">
@@ -23,12 +23,12 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col" class="d-none d-sm-none d-md-none d-lg-table-cell">Movie Title</th>
-                                <th scope="col">Video Title</th>
-                                <th scope="col" class="d-none d-sm-none d-md-table-cell">Duration</th>
-                                <th scope="col" class="d-none d-sm-none d-md-none d-lg-table-cell">Description</th>
-                                <th scope="col">Video Filename</th>
-                                <th scope="col" class="text-center">Action</th>
+                                <th scope="col" class="d-none d-sm-none d-md-none d-lg-table-cell">@lang('app.movie_title')</th>
+                                <th scope="col">@lang('app.video_title')</th>
+                                <th scope="col" class="d-none d-sm-none d-md-table-cell">@lang('app.duration')</th>
+                                <th scope="col" class="d-none d-sm-none d-md-none d-lg-table-cell">@lang('app.description')</th>
+                                <th scope="col">@lang('app.video_filename')</th>
+                                <th scope="col" class="text-center">@lang('app.action')</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create Video')
+@section('title', __('app.create_video'))
 
 @section('content')
 
@@ -10,9 +10,9 @@
                 @csrf
 
                 <div class="card-header bg-white">
-                    Add Video
+                    @lang('app.add_video')
                     <div class="float-right">
-                        <a href="{{ route('movies.index') }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-backward"></i>&nbsp;Back</a>
+                        <a href="{{ route('movies.index') }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-backward"></i>&nbsp;@lang('app.back')</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="card-footer bg-white">
                     <div class="col-6 offset-3">
-                        <button type="submit" class="btn btn-outline-success btn-block">Save Video</button>
+                        <button type="submit" class="btn btn-outline-success btn-block">@lang('app.save_video')</button>
                     </div>
                 </div>
 

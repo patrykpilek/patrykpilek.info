@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-@section('title', 'Views')
+@section('title', __('app.views'))
 
 @section('content')
     <div class="container">
         <div class="card">
             <div class="card-header bg-white">
-                Views
+                @lang('app.views')
                 <div class="float-right">
-                    <a href="{{ route('movies.index') }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-backward"></i>&nbsp;Back</a>
+                    <a href="{{ route('movies.index') }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-backward"></i>&nbsp;@lang('app.back')</a>
                 </div>
             </div>
 
             @if( ! $views->count() )
                 <div class="card-body">
-                    No record found.
+                    @lang('app.no_record_found')
                 </div>
             @else
                 <div class="card-body">
@@ -23,10 +23,10 @@
                             <thead>
                             <tr>
                                 <th scope="col" class="text-center">#</th>
-                                <th scope="col" class="text-center">Video File Name</th>
-                                <th scope="col" class="text-center">View Count</th>
-                                <th scope="col" class="text-center">IP Address</th>
-                                <th scope="col" class="text-center">Updated At</th>
+                                <th scope="col" class="text-center">@lang('app.video_file_name')</th>
+                                <th scope="col" class="text-center">@lang('app.view_count')</th>
+                                <th scope="col" class="text-center">@lang('app.ip_address')</th>
+                                <th scope="col" class="text-center">@lang('app.updated_at')</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -1,12 +1,12 @@
 @extends('chat.index')
 
-@section('title', 'All Users')
+@section('title', __('app.all_users'))
 
 @section('messenger')
     <section id="staff" class="py-5 text-center">
         <div class="container">
             <h1 class="text-black-50 pb-3">
-                Users <span class="badge badge-secondary">{{ $users->count() - 1 }}</span>
+                @lang('app.users') <span class="badge badge-secondary">{{ $users->count() - 1 }}</span>
             </h1>
             <hr>
             <div class="row">
@@ -23,9 +23,9 @@
                             </div>
                             <h6>{{ $user->username }}</h6>
                             @if(Auth::user()->isFollowing($user))
-                                <a href="{{ route('users.unfollow', $user) }}" class="btn btn-primary btn-sm">Unfollow</a>
+                                <a href="{{ route('users.unfollow', $user) }}" class="btn btn-primary btn-sm">@lang('app.unfollow')</a>
                             @else
-                                <a href="{{ route('users.follow', $user) }}" class="btn btn-success btn-sm">Follow</a>
+                                <a href="{{ route('users.follow', $user) }}" class="btn btn-success btn-sm">@lang('app.follow')</a>
                             @endif
                         </div>
                     @endif

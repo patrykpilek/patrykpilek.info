@@ -1,6 +1,6 @@
 @extends('chat.index')
 
-@section('title', 'Messenger')
+@section('title', __('app.messenger'))
 
 @section('messenger')
     <div id="posts"></div>

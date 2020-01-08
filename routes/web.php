@@ -1,5 +1,11 @@
 <?php
 
+Route::get('lang/{locale}', function ($locale) {
+    App::setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
+
 Route::get('/', 'MovieController@movies');
 Route::get('movie/{movie}', 'MovieController@display')->name('movies.display');
 

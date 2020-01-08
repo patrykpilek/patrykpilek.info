@@ -1,23 +1,23 @@
 @extends('layouts.app')
 
-@section('title', 'All Movies')
+@section('title', __('app.all_movies'))
 
 @section('content')
     <div class="container">
         <div class="card">
             <div class="card-header bg-white">
-                Movies
+                @lang('app.movies')
                 <div class="float-right">
-                    <a href="{{ route('movies.file.views') }}" class="btn btn-sm btn-outline-secondary"><i class="far fa-eye"></i>&nbsp;Views</a>
+                    <a href="{{ route('movies.file.views') }}" class="btn btn-sm btn-outline-secondary"><i class="far fa-eye"></i>&nbsp;@lang('app.views')</a>
 
-                    <a href="{{ route('videos.index') }}" class="btn btn-sm btn-outline-info"><i class="fas fa-video"></i>&nbsp;All Videos</a>
-                    <a href="{{ route('movies.create') }}" class="btn btn-sm btn-outline-success"><i class="fas fa-plus"></i>&nbsp;Add Movie</a>
+                    <a href="{{ route('videos.index') }}" class="btn btn-sm btn-outline-info"><i class="fas fa-video"></i>&nbsp;@lang('app.all_videos')</a>
+                    <a href="{{ route('movies.create') }}" class="btn btn-sm btn-outline-success"><i class="fas fa-plus"></i>&nbsp;@lang('app.add_movie')</a>
                 </div>
             </div>
 
             @if( ! $movies->count() )
                 <div class="card-body">
-                    No record found.
+                    @lang('app.no_record_found')
                 </div>
             @else
                 <div class="card-body">
@@ -26,12 +26,12 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Title</th>
-                                <th scope="col" class="text-center d-none d-sm-none d-md-none d-lg-table-cell">Poster Vertical</th>
-                                <th scope="col" class="text-center d-none d-sm-none d-md-none d-lg-table-cell">Poster Horizontal</th>
-                                <th scope="col" class="text-center">Videos</th>
-                                <th scope="col" class="text-center">Action Movie</th>
-                                <th scope="col" class="text-center">View Video</th>
+                                <th scope="col">@lang('app.title')</th>
+                                <th scope="col" class="text-center d-none d-sm-none d-md-none d-lg-table-cell">@lang('app.poster_vertical')</th>
+                                <th scope="col" class="text-center d-none d-sm-none d-md-none d-lg-table-cell">@lang('app.poster_horizontal')</th>
+                                <th scope="col" class="text-center">@lang('app.videos')</th>
+                                <th scope="col" class="text-center">@lang('app.action_movie')</th>
+                                <th scope="col" class="text-center">@lang('app.view_video')</th>
                             </tr>
                             </thead>
                             <tbody>
