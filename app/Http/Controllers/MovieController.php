@@ -131,6 +131,11 @@ class MovieController extends Controller
     public function movies()
     {
         $movies = Movie::orderBy('created_at', 'DESC')->limit(12)->get();
+
+        if(request()->has('term')) {
+            $movies = Movie::orderBy('created_at', 'DESC')->search(request()->get('term'))->paginate(12);
+        }
+
         return view('movie.movies', compact('movies'));
     }
 
@@ -205,9 +210,11 @@ class MovieController extends Controller
                     </div>';
             }
 
-            $output .= '<div class="row col-6 offset-3 mt-4" id="remove-row">
-                            <button id="btn-more" data-id="'.$movie->id.'" class="btn btn-outline-secondary btn-block">Load More</button>
-                        </div>';
+            $output .= '<div class="col-12 mt-4">
+                        <div id="remove-row">
+                            <button id="btn-more" data-id="{{ $id }}" class="btn btn-outline-secondary btn-block col-6 offset-3">Load More</button>
+                        </div>
+                    </div>';
 
             echo $output;
         }

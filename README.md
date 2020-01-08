@@ -1,64 +1,53 @@
 # patrykpilek.info
 
-// ToDo - project description
-
-## Getting Started
-
-// ToDo - These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-
-// ToDo - What things you need to install the software and how to install them
 
 Add to .env
 ```
 APP_NAME=patrykpilek.info
+APP_ENV=production
 ...
-APP_URL=http://patrykpilek.test
+APP_DEBUG=false
+APP_URL=https://patrykpilek.info
 ...
-DB_DATABASE=patrykpilekinfo
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+DB_DATABASE=patrykpilek
+DB_USERNAME=
+DB_PASSWORD=
 ...
 QUEUE_CONNECTION=database
 ...
-MAIL_DRIVER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=d5ef83e034bbc7
-MAIL_PASSWORD=06a921a97012a0
-MAIL_ENCRYPTION=null
+MAIL_DRIVER=
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
 MAIL_FROM_ADDRESS=admin@patrykpilek.info
 MAIL_FROM_NAME=Admin
 ...
-AWS_ACCESS_KEY_ID=AKIA22QMXIYRI5ODSJME
-AWS_SECRET_ACCESS_KEY=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
-AWS_DEFAULT_REGION=eu-west-2
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=
 ...
-PUSHER_APP_ID=901509
-PUSHER_APP_KEY=c02fe2de66e9af55e96d
-PUSHER_APP_SECRET=9c621322de9dffa667b8
-PUSHER_APP_CLUSTER=eu
-```
-
-```
-php artisan key:generate
-php artisan migrate
-php artisan queue:work --tries=5
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=
 ```
 
 ### Installing
 
-// ToDo - A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
 ```
-Give the example
+git clone https://github.com/patrykpilek/patrykpilek.info.git
+composer install
+npm install
+npm run prod
+php artisan key:generate
+php artisan storage:link
+php artisan migrate
+php artisan queue:work --tries=5
 ```
-
-### Application Database Schema 
-![picture](database_schema.png)
 
 ## Built With
 

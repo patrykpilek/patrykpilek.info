@@ -4,6 +4,9 @@
 
 @section('content')
     <div class="container">
+
+        @include('partials.search')
+
         <div class="row" id="load-data">
             @if( ! $movies->count() )
                 <div class="col-12">
@@ -27,10 +30,21 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="row col-6 offset-3 mt-4" id="remove-row">
-                    <button id="btn-more" data-id="{{ $movie->id }}" class="btn btn-outline-secondary btn-block">Load More</button>
-                </div>
             @endif
+                @php
+                    if(isset($movie)) {
+                        $id = $movie->id;
+                    } else {
+                        $id = 0;
+                    }
+                @endphp
+                @if(!($id == 0))
+                    @if($movies->count() >= 12 )
+                        <div class="col-12 mt-4" id="remove-row">
+                            <button id="btn-more" data-id="{{ $id }}" class="btn btn-outline-secondary btn-block btn-block col-6 offset-3">Load More</button>
+                        </div>
+                    @endif
+                @endif
         </div>
     </div>
 @endsection

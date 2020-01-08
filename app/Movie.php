@@ -27,4 +27,16 @@ class Movie extends Model
     public function getMoviePosterHorizontalPathAttribute() {
         return url('storage/movie_posters/' . $this->poster_horizontal );
     }
+
+    public function scopeSearch($query, $term)
+    {
+        if($term) {
+            return $query->where(function($q) use ($term) {
+                $q->orWhere('title', 'like', "%{$term}%");
+                $q->orWhere('year', 'like', "%{$term}%");
+            });
+        } else {
+            return $query;
+        }
+    }
 }
