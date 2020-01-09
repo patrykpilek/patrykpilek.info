@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
@@ -62,6 +63,10 @@ class UserController extends Controller
             $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
             $request->avatar->storeAs('public/avatars', $avatarName);
             $user->avatar = $avatarName;
+
+            Image::make(storage_path() . '/app/public/avatars/'. $avatarName)->fit(348, 348, function($c) {
+                $c->upsize();
+            })->save(storage_path() . '/app/public/avatars/'. $avatarName);
         }
 
         $user->save();

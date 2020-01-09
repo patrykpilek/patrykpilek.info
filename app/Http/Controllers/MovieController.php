@@ -8,12 +8,13 @@ use App\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class MovieController extends Controller
 {
     public function index()
     {
-        $movies = Movie::orderBy('title')->paginate(10);
+        $movies = Movie::orderBy('title')->paginate(5);
         return view('movie.index', compact('movies'));
     }
 
@@ -41,16 +42,25 @@ class MovieController extends Controller
 
         if ($request->hasFile('poster_vertical')) {
             $name = Str::slug(strtolower($request->title), '_');
-            $posterVerticalName = $name . '_poster_vertical' . '.' . request()->poster_vertical->getClientOriginalExtension();
+            $posterVerticalName = $name . '_poster_vertical_' .time(). '.' . request()->poster_vertical->getClientOriginalExtension();
             $request->poster_vertical->storeAs('public/movie_posters', $posterVerticalName);
             $movie->poster_vertical = $posterVerticalName;
+
+            Image::make(storage_path() . '/app/public/movie_posters/'. $posterVerticalName)->fit(160, 230, function($c) {
+                $c->upsize();
+            })->save(storage_path() . '/app/public/movie_posters/'. $posterVerticalName);
+
         }
 
         if ($request->hasFile('poster_horizontal')) {
             $name = Str::slug(strtolower($request->title), '_');
-            $posterHorizontalName = $name . '_poster_horizontal' . '.' . request()->poster_horizontal->getClientOriginalExtension();
+            $posterHorizontalName = $name . '_poster_horizontal_' .time(). '.' . request()->poster_horizontal->getClientOriginalExtension();
             $request->poster_horizontal->storeAs('public/movie_posters', $posterHorizontalName);
             $movie->poster_horizontal = $posterHorizontalName;
+
+            Image::make(storage_path() . '/app/public/movie_posters/'. $posterHorizontalName)->fit(760, 455, function($c) {
+                $c->upsize();
+            })->save(storage_path() . '/app/public/movie_posters/'. $posterHorizontalName);
         }
 
         $movie->save();
@@ -86,26 +96,34 @@ class MovieController extends Controller
 
         if ($request->hasFile('poster_vertical')) {
             $name = Str::slug(strtolower($request->title), '_');
-            $posterVerticalName = $name . '_poster_vertical' . '.' . request()->poster_vertical->getClientOriginalExtension();
+            $posterVerticalName = $name . '_poster_vertical_' .time(). '.' . request()->poster_vertical->getClientOriginalExtension();
             $request->poster_vertical->storeAs('public/movie_posters', $posterVerticalName);
             $movie->poster_vertical = $posterVerticalName;
-            if($oldPosterVertical != 'default.png') {
+            if($oldPosterVertical != $posterVerticalName) {
                 if(Storage::exists('/public/movie_posters/'. $oldPosterVertical)){
                     Storage::delete('/public/movie_posters/'. $oldPosterVertical);
                 }
             }
+
+            Image::make(storage_path() . '/app/public/movie_posters/'. $posterVerticalName)->fit(160, 230, function($c) {
+                $c->upsize();
+            })->save(storage_path() . '/app/public/movie_posters/'. $posterVerticalName);
         }
 
         if ($request->hasFile('poster_horizontal')) {
             $name = Str::slug(strtolower($request->title), '_');
-            $posterHorizontalName = $name . '_poster_horizontal' . '.' . request()->poster_horizontal->getClientOriginalExtension();
+            $posterHorizontalName = $name . '_poster_horizontal_' .time(). '.' . request()->poster_horizontal->getClientOriginalExtension();
             $request->poster_horizontal->storeAs('public/movie_posters', $posterHorizontalName);
             $movie->poster_horizontal = $posterHorizontalName;
-            if($oldPosterHorizontal != 'default.png') {
+            if($oldPosterHorizontal != $posterHorizontalName) {
                 if(Storage::exists('/public/movie_posters/'. $oldPosterHorizontal)){
                     Storage::delete('/public/movie_posters/'. $oldPosterHorizontal);
                 }
             }
+
+            Image::make(storage_path() . '/app/public/movie_posters/'. $posterHorizontalName)->fit(760, 455, function($c) {
+                $c->upsize();
+            })->save(storage_path() . '/app/public/movie_posters/'. $posterHorizontalName);
         }
 
         $movie->save();

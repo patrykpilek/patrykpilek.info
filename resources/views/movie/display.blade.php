@@ -20,6 +20,7 @@
             <div class="container">
                 <h1 class="display-6">{{ Str::title($movie->title) }}</h1>
                 <hr class="my-4">
+                <p>@lang('app.year'): {{ $movie->year }}, @lang('app.duration'): {{ $videos->first()->hours }}</p>
             </div>
         </section>
         <div class="py-5 bg-light">
@@ -27,7 +28,7 @@
                 <div class="row">
                     <div class="col-8 offset-2">
                         <video poster="{{ url('storage/movie_posters/' . $movie->poster_horizontal) }}" controls controlsList="nodownload" preload="none">
-                            <source id="theVideo" src="{{ url('storage/movies/'. Str::slug($movie->title, '_') . '/' . $videos->first()->video_filename ) }}" type="video/mp4">
+                            <source id="theVideo" src="{{ url('storage/movies/'. $videos->first()->video_filename ) }}" type="video/mp4">
                             {{--                                <source src="{{ $videos->first()->getS3Video() }}" type="video/mp4">--}}
                             @lang('app.your_browser_does_not_support_the_video_tag')
                         </video>
@@ -63,8 +64,9 @@
                                 <div class="tab-pane fade show @if ($loop->first) active @endif" id="list-odc{{$loop->iteration}}" role="tabpanel"
                                      aria-labelledby="list-odc{{$loop->iteration}}-list">
                                     <p class="text-center">{{ $loop->iteration }}. {{ Str::title($video->title) }}</p>
+                                    <p class="text-center">@lang('app.year'): {{ $video->movie->year }}, @lang('app.duration'): {{ $video->hours }}</p>
                                     <video class="embed-responsive-item" poster="{{ url('storage/movie_posters/' . $movie->poster_horizontal) }}" controls controlsList="nodownload" preload="none">
-                                        <source src="{{ url('storage/movies/'. Str::slug($movie->title, '_') . '/' . $video->video_filename ) }}" type="video/mp4">
+                                        <source src="{{ url('storage/movies/' . $video->video_filename ) }}" type="video/mp4">
                                         {{--                                            <source src="{{ $video->getS3Video() }}" type="video/mp4">--}}
                                         @lang('app.your_browser_does_not_support_the_video_tag')
                                     </video>

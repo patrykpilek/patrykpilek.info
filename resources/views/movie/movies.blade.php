@@ -55,7 +55,7 @@
             $(document).on('click','#btn-more',function() {
 
                 let id = $(this).data('id');
-                $("#btn-more").html(@lang('app.loading'));
+                $("#btn-more").html("Loading....");
 
                 $.ajax({
                     url: '{{ url("/loadmore") }}',
@@ -71,7 +71,7 @@
                             $('#remove-row').remove();
                             $('#load-data').append(data);
                         } else {
-                            $('#btn-more').html(@lang('app.no_more'));
+                            $('#btn-more').html("No More");
                         }
                     }
                 });

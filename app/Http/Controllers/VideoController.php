@@ -12,7 +12,7 @@ class VideoController extends Controller
 {
     public function index()
     {
-        $videos = Video::orderBy('title')->get();
+        $videos = Video::orderBy('movie_id')->paginate(5);
         return view('video.index', compact('videos'));
     }
 
@@ -32,7 +32,7 @@ class VideoController extends Controller
             'video_filename' => ['required', 'string'],
         ]);
 
-        $movie = Movie::findOrFail($request->movieId);
+//        $movie = Movie::findOrFail($request->movieId);
 
         $filename = Str::slug($request->video_filename, '_');
 
@@ -56,11 +56,11 @@ class VideoController extends Controller
 //        }
 
 
-        $directory = 'public/movies/' . Str::slug($movie->title, '_');
-
-        if(!Storage::directories($directory)) {
-            Storage::makeDirectory($directory);
-        }
+//        $directory = 'public/movies/' . Str::slug($movie->title, '_');
+//
+//        if(!Storage::directories($directory)) {
+//            Storage::makeDirectory($directory);
+//        }
 
         $video->save();
 
@@ -106,19 +106,23 @@ class VideoController extends Controller
 
     public function destroy(Video $video)
     {
+        $movie = Movie::findOrFail($video->movie_id);
+
         $video->delete();
 
-        if(Storage::exists('/public/movies/'. Str::slug($video->movie->title, '_') . '/' . $video->video_filename)){
-            Storage::delete('/public/movies/'. Str::slug($video->movie->title, '_') . '/' . $video->video_filename);
+        if(Storage::exists('/public/movies/' . $video->video_filename)){
+            Storage::delete('/public/movies/' . $video->video_filename);
         }
 
-        $files = Storage::allFiles('/public/movies/'. Str::slug($video->movie->title, '_'));
-
-        if (empty($files)) {
-            Storage::deleteDirectory('/public/movies/'. Str::slug($video->movie->title, '_'));
-        }
-
-        $movie = Movie::findOrFail($video->movie_id);
+//        if(Storage::exists('/public/movies/'. Str::slug($video->movie->title, '_') . '/' . $video->video_filename)){
+//            Storage::delete('/public/movies/'. Str::slug($video->movie->title, '_') . '/' . $video->video_filename);
+//        }
+//
+//        $files = Storage::allFiles('/public/movies/'. Str::slug($video->movie->title, '_'));
+//
+//        if (empty($files)) {
+//            Storage::deleteDirectory('/public/movies/'. Str::slug($video->movie->title, '_'));
+//        }
 
         return redirect('/movies/videos/'. $movie->slug)->with('success', 'Video has been deleted.');
     }
