@@ -1,5 +1,13 @@
 # patrykpilek.info
 
+### Installing
+
+```
+git clone https://github.com/patrykpilek/patrykpilek.info.git
+composer install
+cp .env.example .env
+php artisan key:generate
+```
 
 ### Prerequisites
 
@@ -11,42 +19,43 @@ APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://patrykpilek.info
 ...
-DB_DATABASE=patrykpilek
-DB_USERNAME=
-DB_PASSWORD=
+DB_DATABASE=patrykpilek_info
+DB_USERNAME=username_with_access_to_database
+DB_PASSWORD=password_to_databse
+...
+BROADCAST_DRIVER=pusher
 ...
 QUEUE_CONNECTION=database
 ...
-MAIL_DRIVER=
-MAIL_HOST=
-MAIL_PORT=
-MAIL_USERNAME=
-MAIL_PASSWORD=
-MAIL_ENCRYPTION=
+MAIL_DRIVER=from_mailgun
+MAIL_HOST=from_mailgun
+MAIL_PORT=from_mailgun
+MAIL_USERNAME=from_mailgun
+MAIL_PASSWORD=from_mailgun
+MAIL_ENCRYPTION=from_mailgun
 MAIL_FROM_ADDRESS=admin@patrykpilek.info
-MAIL_FROM_NAME=Admin
+MAIL_FROM_NAME=patrykpilek.info
 ...
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=
+AWS_ACCESS_KEY_ID=from_aws_s3
+AWS_SECRET_ACCESS_KEY=from_aws_s3
+AWS_DEFAULT_REGION=from_aws_s3
 ...
-PUSHER_APP_ID=
-PUSHER_APP_KEY=
-PUSHER_APP_SECRET=
-PUSHER_APP_CLUSTER=
+PUSHER_APP_ID=from_pusher
+PUSHER_APP_KEY=from_pusher
+PUSHER_APP_SECRET=from_pusher
+PUSHER_APP_CLUSTER=from_pusher
 ```
 
-### Installing
+### Run
 
 ```
-git clone https://github.com/patrykpilek/patrykpilek.info.git
-composer install
+php artisan migrate
+php artisan storage:link
 npm install
 npm run prod
-php artisan key:generate
-php artisan storage:link
-php artisan migrate
 php artisan queue:work --tries=5
+or
+setup supervisor - check laravel doc
 ```
 
 ## Built With

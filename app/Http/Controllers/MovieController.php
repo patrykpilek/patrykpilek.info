@@ -151,7 +151,7 @@ class MovieController extends Controller
         $movies = Movie::orderBy('created_at', 'DESC')->limit(12)->get();
 
         if(request()->has('term')) {
-            $movies = Movie::orderBy('created_at', 'DESC')->search(request()->get('term'))->paginate(12);
+            $movies = Movie::orderBy('created_at', 'DESC')->search(request()->get('term'))->get();
         }
 
         return view('movie.movies', compact('movies'));
@@ -209,8 +209,7 @@ class MovieController extends Controller
         $movies = Movie::where('id','<',$id)->orderBy('created_at','DESC')->limit(12)->get();
 
         if(!$movies->isEmpty()) {
-            foreach($movies as $movie)
-            {
+            foreach($movies as $movie) {
                 $url = url('movie/'.$movie->slug);
                 $moviePoster = url('storage/movie_posters/'.$movie->poster_vertical);
                 $movieTitle = Str::limit(Str::title($movie->title) , 15, ' (...)');
@@ -230,11 +229,22 @@ class MovieController extends Controller
 
             $output .= '<div class="col-12 mt-4">
                         <div id="remove-row">
-                            <button id="btn-more" data-id="{{ $id }}" class="btn btn-outline-secondary btn-block col-6 offset-3">Load More</button>
+                            <button id="btn-more" data-id="'. $movie->id .'" class="btn btn-outline-secondary btn-block col-6 offset-3">Load More</button>
                         </div>
                     </div>';
 
             echo $output;
         }
+    }
+
+    public function kolumb()
+    {
+        $movies = Movie::orderBy('created_at', 'DESC')->get();
+
+        if(request()->has('term')) {
+            $movies = Movie::orderBy('created_at', 'DESC')->search(request()->get('term'))->get();
+        }
+
+        return view('movie.kolumb', compact('movies'));
     }
 }

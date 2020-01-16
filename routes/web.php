@@ -1,12 +1,23 @@
 <?php
 
-Route::get('lang/{locale}', function ($locale) {
-    App::setLocale($locale);
-    session()->put('locale', $locale);
-    return redirect()->back();
-});
+Route::get('lang/{locale}', 'LangController@locale');
+//Clear config cache:
+Route::get('/config-clear', 'CacheController@configClear');
+//Clear Cache facade value:
+Route::get('/cache-clear', 'CacheController@cacheClear');
+//Clear Route cache:
+Route::get('/route-clear', 'CacheController@routeClear');
+//Clear View cache:
+Route::get('/view-clear', 'CacheController@viewClear');
+//Reoptimized class loader:
+Route::get('/optimize', 'CacheController@optimizeCache');
+//Clear Config cache:
+Route::get('/config-cache', 'CacheController@configCache');
+//Route cache:
+Route::get('/route-cache', 'CacheController@routeCache');
 
 Route::get('/', 'MovieController@movies');
+Route::get('kolumb', 'MovieController@kolumb');
 Route::get('movie/{movie}', 'MovieController@display')->name('movies.display');
 
 Route::post('/increaseViewVideo', 'MovieController@increaseViewVideo');

@@ -22,11 +22,15 @@
         "react-dom": "^16.12.0",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.24.3",
-        "sass-loader": "^7.3.1"
+        "sass-loader": "^7.3.1",
+        "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.12.0",
+        "jasny-bootstrap": "^4.0.0",
         "laravel-echo": "^1.6.1",
-        "pusher-js": "^4.4.0"
+        "moment": "^2.24.0",
+        "pusher-js": "^4.4.0",
+        "tempusdominus-bootstrap-4": "^5.1.2"
     }
 }

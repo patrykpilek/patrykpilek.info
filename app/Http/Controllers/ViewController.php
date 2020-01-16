@@ -9,7 +9,7 @@ class ViewController extends Controller
 {
     public function index()
     {
-        $views = View::orderBy('view_count', 'desc')->paginate(10);
+        $views = View::orderBy('ip', 'desc')->paginate(10);
         return view('view.index',compact('views'));
     }
 }
