@@ -8,8 +8,6 @@
             <div class="card-header bg-white">
                 @lang('app.movies')
                 <div class="float-right">
-                    <a href="{{ route('movies.file.views') }}" class="btn btn-sm btn-outline-secondary"><i class="far fa-eye"></i>&nbsp;@lang('app.views')</a>
-
                     <a href="{{ route('videos.index') }}" class="btn btn-sm btn-outline-info"><i class="fas fa-video"></i>&nbsp;@lang('app.all_videos')</a>
                     <a href="{{ route('movies.create') }}" class="btn btn-sm btn-outline-success"><i class="fas fa-plus"></i>&nbsp;@lang('app.add_movie')</a>
                 </div>

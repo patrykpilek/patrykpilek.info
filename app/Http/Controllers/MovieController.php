@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use Sarfraznawaz2005\VisitLog\Facades\VisitLog;
 
 class MovieController extends Controller
 {
@@ -148,10 +149,12 @@ class MovieController extends Controller
 
     public function movies()
     {
+        VisitLog::save();
+
         $movies = Movie::orderBy('created_at', 'DESC')->limit(12)->get();
 
         if(request()->has('term')) {
-            $movies = Movie::orderBy('created_at', 'DESC')->search(request()->get('term'))->get();
+            $movies = Movie::orderBy('created_at', 'DESC')->search(request()->get('term'))->limit(12)->get();
         }
 
         return view('movie.movies', compact('movies'));
@@ -159,46 +162,9 @@ class MovieController extends Controller
 
     public function display(Movie $movie)
     {
+        VisitLog::save();
         $videos = $movie->videos()->where('movie_id', $movie->id)->get();
         return view('movie.display', compact('movie', 'videos'));
-    }
-
-    public function increaseViewVideo(Request $request)
-    {
-        $videos = Video::all();
-        $videoUrl = $request->videoUrl;
-        $title = null;
-
-        foreach( $videos as $video ) {
-            if(Str::contains($videoUrl, $video->video_filename)) {
-                $title = $video->video_filename;
-                $video_view = View::where('page_name', $title)->first();
-                if($video_view == null) {
-                    $newView = new View();
-                    $newView->page_name = $title;
-                    $newView->view_count = 1;
-                    $newView->ip = $request->ip();
-                    $newView->save();
-                }
-
-                if($video_view->ip != $request->ip()) {
-                    $newView = new View();
-                    $newView->page_name = $title;
-                    $newView->view_count = 1;
-                    $newView->ip = $request->ip();
-                    $newView->save();
-                }
-
-                if($video_view->ip == $request->ip()) {
-                    $video_view->increment('view_count');
-                }
-            }
-        }
-
-        return response()->json([
-            'videoFileName' => $title,
-            'message' => 'Success'
-        ], 200);
     }
 
     public function loadMoreData(Request $request)

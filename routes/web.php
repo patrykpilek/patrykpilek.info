@@ -20,8 +20,6 @@ Route::get('/', 'MovieController@movies');
 Route::get('kolumb', 'MovieController@kolumb');
 Route::get('movie/{movie}', 'MovieController@display')->name('movies.display');
 
-Route::post('/increaseViewVideo', 'MovieController@increaseViewVideo');
-
 Route::post('/loadmore','MovieController@loadMoreData' );
 
 Auth::routes(['verify' => true]);
@@ -46,6 +44,4 @@ Route::group(['middleware' => ['admin']], function() {
     Route::resource('movies', 'MovieController')->except(['show']);
     Route::resource('movies/videos', 'VideoController')->except(['show']);
     Route::get('movies/videos/{movie}', 'VideoController@view')->name('videos.view');
-    // Views
-    Route::get('/movies/file/views', 'ViewController@index')->name('movies.file.views');
 });

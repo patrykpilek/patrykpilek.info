@@ -9,17 +9,17 @@
             let videos = document.getElementsByTagName('video');
 
             for (let i = 0, len = videos.length; i < len; i++) {
-                if(videos[i] === e.target) {
-                    // console.log('Video URL: ' + videos.item(i).currentSrc );
-
-                    window.axios.post('/increaseViewVideo',{
-                        videoUrl: videos.item(i).currentSrc,
-                    }).then((response)=> {
-                        console.log(response.data)
-                    }).catch((error)=> {
-                        console.log(error.response.data)
-                    });
-                }
+                // if(videos[i] === e.target) {
+                //     // console.log('Video URL: ' + videos.item(i).currentSrc );
+                //
+                //     window.axios.post('/increaseViewVideo',{
+                //         videoUrl: videos.item(i).currentSrc,
+                //     }).then((response)=> {
+                //         console.log(response.data)
+                //     }).catch((error)=> {
+                //         console.log(error.response.data)
+                //     });
+                // }
 
                 if (videos[i] !== e.target) {
                     videos[i].pause();

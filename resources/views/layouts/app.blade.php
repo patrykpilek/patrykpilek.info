@@ -17,32 +17,37 @@
     <button id="backToTop" title="Go to top"></button>
 
     <div class="container">
-        <header class="logo-header py-3">
-            <div class="row flex-nowrap justify-content-between align-items-center">
-                @guest
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 pt-1">
-                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">@lang('app.register')</a>
-                    </div>
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
-                        <a class="logo-header-logo text-dark" href="{{ url('/') }}">{{ config('app.name') }}</a>
-                    </div>
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
-                        <a class="text-muted mr-2" href="{{ url('lang/en') }}">EN</a>
-                        <a class="text-muted mr-2" href="{{ url('lang/pl') }}">PL</a>
-                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">@lang('app.login')</a>
-                    </div>
-                @else
-                    <div class="col-6 text-left">
-                        <a class="logo-header-logo text-dark" href="{{ url('/')  }}">{{ config('app.name') }}</a>
-                    </div>
-                    <div class="col-6 d-flex justify-content-end align-items-center">
-                        <a class="text-muted mr-2" href="{{ url('lang/en') }}">EN</a>
-                        <a class="text-muted mr-2" href="{{ url('lang/pl') }}">PL</a>
-                        <div class="dropdown">
-                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent border-bottom p-0 pt-2">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <h2>{{ config('app.name') }}</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto">
+
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">@lang('app.login')</a>
+                        </li>
+
+                    @else
+                        <li class="nav-item dropdown">
+
+                            <button id="navbarDropdown" class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->username }} <span class="caret"></span>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
                                 <a class="dropdown-item" href="{{ route('users.view', Auth::user()) }}">
                                     @lang('app.profile')
                                 </a>
@@ -60,14 +65,23 @@
                                     @csrf
                                 </form>
                             </div>
-                        </div>
-                    </div>
-                @endguest
+                        </li>
+                    @endguest
+                </ul>
             </div>
-        </header>
+        </nav>
+
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
                 <a class="p-2 text-muted" href="{{ url('/') }}">@lang('app.movies')</a>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="{{ url('lang/en') }}">EN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="{{ url('lang/pl') }}">PL</a>
+                    </li>
+                </ul>
                 <a class="p-2 text-muted" href="{{ route('messenger') }}">@lang('app.messenger')</a>
             </nav>
         </div>
