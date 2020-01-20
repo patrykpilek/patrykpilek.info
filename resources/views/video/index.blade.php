@@ -46,6 +46,9 @@
                     </div>
                 </div>
             @endif
+            <div class="card-footer bg-white">
+                {{ $videos->links() }}
+            </div>
         </div>
     </div>
 @endsection
