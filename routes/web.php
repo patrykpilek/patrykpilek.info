@@ -22,6 +22,11 @@ Route::get('movie/{movie}', 'MovieController@display')->name('movies.display');
 
 Route::post('/loadmore','MovieController@loadMoreData' );
 
+Route::get('/streams','StreamController@index' );
+Route::get('streams/{path?}', function() {
+    return view('stream.index');
+})->where('path', '.*');
+
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['verified', 'auth']], function() {

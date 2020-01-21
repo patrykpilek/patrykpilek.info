@@ -74,6 +74,8 @@
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
                 <a class="p-2 text-muted" href="{{ url('/') }}">@lang('app.movies')</a>
+                <a class="p-2 text-muted" href="{{ url('streams') }}">Streams</a>
+                <a class="p-2 text-muted" href="{{ route('messenger') }}">@lang('app.messenger')</a>
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link text-muted" href="{{ url('lang/en') }}">EN</a>
@@ -82,7 +84,6 @@
                         <a class="nav-link text-muted" href="{{ url('lang/pl') }}">PL</a>
                     </li>
                 </ul>
-                <a class="p-2 text-muted" href="{{ route('messenger') }}">@lang('app.messenger')</a>
             </nav>
         </div>
 

@@ -14,6 +14,8 @@ require('./bootstrap');
 
 require('./posts');
 
+require('./streams');
+
 let btn = $('#backToTop');
 
 $(window).scroll(function() {

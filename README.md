@@ -46,6 +46,13 @@ PUSHER_APP_SECRET=from_pusher
 PUSHER_APP_CLUSTER=from_pusher
 ```
 
+Change resources/js/apis/streams.js file:
+```
+export default window.axios.create({
+    baseURL: 'https://patrykpilek.info/api/'
+});
+```
+
 ### Run
 
 ```
